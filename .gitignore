@@ -1,0 +1,6 @@
+*.kpf
+*~
+*.orig
+.DS_Store
+*tmp*
+pkg/

@@ -1,0 +1,8 @@
+
+module Music
+
+	# This module deals with pianos and keyboards and the like.
+	module Keyboard
+		class KeyboardException < MusicException; end
+	end
+end
