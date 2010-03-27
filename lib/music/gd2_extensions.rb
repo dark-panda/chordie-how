@@ -1,9 +1,4 @@
 
-begin
-	require 'gd2-ffij'
-rescue Exception
-end
-
 if defined? GD2
 	module GD2
 		class Canvas

@@ -1,4 +1,12 @@
 
+require 'builder'
+
+require 'music/utils'
+require 'music/midi'
+require 'music/image'
+require 'music/stringed/constants'
+require 'music/stringed/utils'
+
 # The Chord class is used for displaying a chord. Generally, this is
 # something you'd want to use via the find_chords method rather than
 # instantiating directly, unless you happen to know how to fill the

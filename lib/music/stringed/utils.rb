@@ -1,4 +1,8 @@
 
+require 'music/utils'
+require 'music/constants'
+require 'music/stringed/constants'
+
 module Music::Stringed
 	module Utils
 		include Music::Utils

@@ -1,4 +1,6 @@
-module Music::Harmonica::Constants
+module Music
+module Harmonica
+module Constants
 	TUNINGS = {
 		:standard => {
 			:name => 'standard Richter diatonic',
@@ -156,3 +158,6 @@ module Music::Harmonica::Constants
 		]
 	}.freeze
 end
+end
+end
+

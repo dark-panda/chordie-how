@@ -29,3 +29,9 @@ module Music
 		end
 	end
 end
+
+require 'music/constants'
+require 'music/stringed'
+require 'music/keyboard'
+require 'music/harmonica'
+

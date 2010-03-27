@@ -1,4 +1,10 @@
 
+require 'builder'
+
+require 'music/utils'
+require 'music/midi'
+require 'music/keyboard/utils'
+
 class Music::Keyboard::Scale
 	include Music::Utils
 	include Music::Midi

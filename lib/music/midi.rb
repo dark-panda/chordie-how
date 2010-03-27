@@ -4,6 +4,8 @@ begin
 rescue Exception
 end
 
+require 'music'
+
 module Music
 	module Midi
 		class MidiException < MusicException; end

@@ -1,3 +1,10 @@
+
+require 'builder'
+
+require 'music/midi'
+require 'music/utils'
+require 'music/keyboard/utils'
+
 # The Chord class in this module is used for displaying a chord.
 class Music::Keyboard::Chord
 	include Music::Midi

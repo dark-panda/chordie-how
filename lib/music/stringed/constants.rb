@@ -1,5 +1,7 @@
 
-module Music::Stringed::Constants
+module Music
+	module Stringed
+	module Constants
 	# various tunings we can display. For flats, use the corresponding
 	# sharp.
 	TUNINGS = {
@@ -242,4 +244,6 @@ module Music::Stringed::Constants
 			'font-size: small;'
 		]
 	}.freeze
+end
+end
 end

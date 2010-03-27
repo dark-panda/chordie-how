@@ -1,4 +1,12 @@
 
+require 'builder'
+
+require 'music/utils'
+require 'music/midi'
+require 'music/image'
+require 'music/stringed/constants'
+require 'music/stringed/utils'
+
 # The Scale class, unlike the Chord class, should be accessed directly
 # since figuring out the note positions on the fretboard is far less
 # involved than with a chord.

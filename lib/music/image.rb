@@ -1,7 +1,7 @@
 
 begin
-	require 'gd2-ffij'
-	require File.join(File.dirname(__FILE__), 'gd2_extensions')
+    require 'gd2-ffij'
+    require File.join(File.dirname(__FILE__), 'gd2_extensions')
 rescue Exception
 end
 

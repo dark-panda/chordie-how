@@ -1,3 +1,9 @@
+
+require 'builder'
+
+require 'music/midi'
+require 'music/utils'
+
 class Music::Harmonica::Scale
 	include Music::Midi
 	include Music::Utils

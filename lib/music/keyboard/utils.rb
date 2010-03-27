@@ -1,5 +1,7 @@
 
-module Music::Keyboard::Utils
+module Music
+module Keyboard
+module Utils
 	def highlight(c, if_condition)
 		if if_condition
 			interval_to_html_class(@intervals, c)
@@ -7,4 +9,6 @@ module Music::Keyboard::Utils
 			'note'
 		end
 	end
+end
+end
 end

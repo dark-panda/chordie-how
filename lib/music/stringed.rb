@@ -1,4 +1,8 @@
 
+require 'music/utils'
+require 'music/stringed/chord'
+require 'music/stringed/scale'
+
 module Music
 
 	# This module deals with stringed instruments like guitars, basses,
