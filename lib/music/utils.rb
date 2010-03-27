@@ -196,9 +196,7 @@ module Music
 
 				# Sort and re-order the Array so the tonic is at the beginning.
 				retval.sort!
-				unless retval.detect { |x| x[0] == root }
-					raise "root note not found in retval, this can't be good"
-				else
+				if retval.detect { |x| x[0] == root }
 					retval << retval.shift until retval.first[0] == root
 				end
 
@@ -253,9 +251,7 @@ module Music
 
 				# Sort and re-order the Array so the tonic is at the beginning.
 				retval.sort!
-				unless retval.detect { |x| x[0] == root }
-					raise "root note not found in retval, this can't be good"
-				else
+				if retval.detect { |x| x[0] == root }
 					retval << retval.shift until retval.first[0] == root
 				end
 
@@ -310,9 +306,7 @@ module Music
 
 				# Sort and re-order the Array so the tonic is at the beginning.
 				retval.sort!
-				unless retval.detect { |x| x[0] == root }
-					raise "root note not found in retval, this can't be good"
-				else
+				if retval.detect { |x| x[0] == root }
 					retval << retval.shift until retval.first[0] == root
 				end
 
@@ -361,9 +355,7 @@ module Music
 
 				# Sort and re-order the Array so the tonic is at the beginning.
 				retval.sort!
-				unless retval.detect { |x| x[0] == root }
-					raise "root note not found in retval, this can't be good"
-				else
+				if retval.detect { |x| x[0] == root }
 					retval << retval.shift until retval.first[0] == root
 				end
 
@@ -414,9 +406,7 @@ module Music
 
 				# Sort and re-order the Array so the tonic is at the beginning.
 				retval.sort!
-				unless retval.detect { |x| x[0] == root }
-					raise "root note not found in retval, this can't be good"
-				else
+				if retval.detect { |x| x[0] == root }
 					retval << retval.shift until retval.first[0] == root
 				end
 
