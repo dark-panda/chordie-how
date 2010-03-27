@@ -10,6 +10,9 @@ module Music
 		class ImageException < MusicException; end
 		class GD2Missing < ImageException; end
 
+		FONT_PATH = File.join(File.expand_path(File.dirname(__FILE__)),
+			%w{ .. .. vendor fonts ttf DejaVuSans.ttf })
+
 		if defined? GD2
 			COLORS = {
 				:'gray' => GD2::Color[0xAA, 0xAA, 0xAA],

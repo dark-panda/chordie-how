@@ -237,8 +237,6 @@ class Music::Stringed::Scale
 		width_offset = 30
 		height = (@tuning.length + 2) * 20 + 20
 		width = (options[:max_fret] - options[:min_fret] + 2) * width_offset + 40
-		font = File.join(File.expand_path(File.dirname(__FILE__)),
-			'..', 'vendor', 'fonts', 'ttf', 'DejaVuSans.ttf')
 
 		image = GD2::Image::IndexedColor.new width, height
 		image_tuning = @tuning.dup.reverse
@@ -275,7 +273,7 @@ class Music::Stringed::Scale
 				}
 			)
 
-			pen.font = GD2::Font::TrueType[font, 10]
+			pen.font = GD2::Font::TrueType[FONT_PATH, 10]
 			pen.thickness = 2
 
 			# frets

@@ -302,9 +302,6 @@ class Music::Stringed::Chord
 		width_offset = 20
 		width = (@tuning.length + 2) * width_offset
 		height = (max_fret - min_fret + 2) * 40
-		font = File.join(File.expand_path(File.dirname(__FILE__)),
-			'..', 'vendor', 'fonts', 'ttf', 'DejaVuSans.ttf')
-
 		image = GD2::Image::IndexedColor.new width, height
 
 		image_tuning = @tuning_notes.dup
@@ -341,7 +338,7 @@ class Music::Stringed::Chord
 			# back to default colours
 			pen.color = image.palette.resolve(COLORS[:white])
 
-			pen.font = GD2::Font::TrueType[font, 10]
+			pen.font = GD2::Font::TrueType[FONT_PATH, 10]
 			pen.thickness = 2
 
 			# the frets
