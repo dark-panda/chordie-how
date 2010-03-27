@@ -452,18 +452,10 @@ module Music
 				# Use the shortest distance between the notes. If
 				# it's less than half the size of NOTES, then we wrap
 				# around to the other side.
-				if z >= 0
-					if z.abs < (NOTES.length / 2)
-						z
-					else
-						z - 12
-					end
+				if z.abs < (NOTES.length / 2)
+					z
 				else
-					if z.abs < (NOTES.length / 2)
-						z
-					else
-						z + 12
-					end
+					z - (z >= 0 ? 12 : -12 )
 				end
 			end
 
