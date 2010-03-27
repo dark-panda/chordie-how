@@ -16,6 +16,7 @@ begin
 		gem.email        = "dark.panda@gmail.com"
 		gem.homepage     = "http://github.com/dark-panda/music"
 		gem.authors      = [ "J Smith" ]
+		gem.add_dependency 'gd2-ffij'
 	end
 	Jeweler::GemcutterTasks.new
 rescue LoadError
