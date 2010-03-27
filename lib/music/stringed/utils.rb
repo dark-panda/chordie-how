@@ -10,7 +10,7 @@ module Music::Stringed
 		include Music::Stringed::Constants
 
 		# check to see if we have a :limit option and it's valid.
-		def have_limit l
+		def have_limit?(l)
 			l.nil? ? false : Kernel.Integer(l) rescue false
 		end
 
@@ -80,7 +80,7 @@ module Music::Stringed
 
 			# return right away if :limit is less than or equal to zero
 			# since there's not much point in continuing.
-			return [] if (have_limit(options[:limit]) && options[:limit].to_i <= 0)
+			return [] if (have_limit?(options[:limit]) && options[:limit].to_i <= 0)
 
 			raise StringedException, "Please keep your frets to less than 32" if options[:max_fret].to_i > 32 || options[:min_fret].to_i > 32
 
@@ -126,7 +126,7 @@ module Music::Stringed
 			# fretboard.
 			retval = Array.new
 			fingerings.each do |f|
-				break if have_limit(options[:limit]) && retval.length >= options[:limit].to_i
+				break if have_limit?(options[:limit]) && retval.length >= options[:limit].to_i
 
 				# see if there's multiple notes on each string. If there
 				# is, we need to construct new shapes for each. If there
@@ -174,7 +174,7 @@ module Music::Stringed
 					# contain all of the required notes.
 					chords.each_with_index do |c, i|
 						retval << c if check_chord(c, chord_notes) && !retval.include?(c)
-						break if have_limit(options[:limit]) && retval.length >= options[:limit].to_i
+						break if have_limit?(options[:limit]) && retval.length >= options[:limit].to_i
 					end
 
 				# If there are no strings with multiple notes, just add the
