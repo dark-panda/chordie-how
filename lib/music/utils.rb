@@ -11,16 +11,17 @@ module Music
 			# Looks up a scale pattern. You can also use Arrays or Hashes
 			# directly.
 			def find_scale_pattern(pattern)
-				if [ Symbol, String ].include?(pattern.class)
-					if SCALE_PATTERNS[pattern.to_sym]
-						SCALE_PATTERNS[pattern.to_sym][:pattern]
-					else
-						raise BadScalePattern.new(pattern)
-					end
-				elsif pattern.is_a?(Hash) && pattern[:pattern]
-					pattern[:pattern]
-				elsif pattern.is_a?(Array)
-					pattern
+				case pattern
+					when Symbol, String
+						if SCALE_PATTERNS[pattern.to_sym]
+							SCALE_PATTERNS[pattern.to_sym][:pattern]
+						else
+							raise BadScalePattern.new(pattern)
+						end
+					when Hash
+						pattern[:pattern]
+					when Array
+						pattern
 				end
 			end
 
@@ -28,16 +29,17 @@ module Music
 			# Looks up a chord type. You can also use Arrays or Hashes
 			# directly.
 			def find_chord_type(t)
-				if [ Symbol, String ].include?(t.class)
-					if CHORD_TYPES[t.to_sym]
-						CHORD_TYPES[t.to_sym][:intervals]
-					else
-						raise BadChordType.new(t)
-					end
-				elsif t.is_a?(Hash) && t[:intervals]
-					t[:intervals]
-				elsif t.is_a?(Array)
-					t
+				case t
+					when Symbol, String
+						if CHORD_TYPES[t.to_sym]
+							CHORD_TYPES[t.to_sym][:intervals]
+						else
+							raise BadChordType.new(t)
+						end
+					when Hash
+						t[:intervals]
+					when Array
+						t
 				end
 			end
 
