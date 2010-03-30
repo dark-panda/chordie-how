@@ -1,14 +1,13 @@
 
 require 'builder'
 
-require 'music/utils'
 require 'music/midi'
+require 'music/utils'
 require 'music/keyboard/utils'
 
 class Music::Keyboard::Scale
-	include Music::Utils
 	include Music::Midi
-	include Music::Keyboard
+	include Music::Utils
 	include Music::Keyboard::Utils
 
 	attr_reader :key, :pattern, :notes, :intervals
@@ -51,7 +50,7 @@ class Music::Keyboard::Scale
 			if options[:show_notes]
 				xml.tr(:class => 'notes') do
 					xml.td('C')
-					35.times do |i|
+					11.times do |i|
 						c = find_note_from_index(i + start)
 						xml.td(c,
 							[ 'A', 'D', 'G' ].include?(c) ? {} : { :colspan => '2' }
@@ -63,21 +62,36 @@ class Music::Keyboard::Scale
 			# This next section handles the black keys and the top
 			# halves of the white keys.
 			xml.tr(:class => 'top-half') do
+				n = @notes.dup
+
 				# If n is C (our first key) then we need to colour
 				# it.
-				if @notes.include?('C')
-					klass = highlight('C', options[:highlight_intervals])
+				attributes = if n.first == 'C'
+					n.delete('C')
+					if options[:highlight_intervals]
+						klass = interval_to_html_class(@intervals, 'C')
+						style = interval_class_to_style(klass)
+						{ :class => "key-l-e #{klass}", :style => style }
+					else
+						{ :class => 'key-l-e note', :style => interval_class_to_style('note') }
+					end
 				end
 
-				xml.td(nil, :class => "key-l-e #{klass}")
+				xml.td(nil, attributes)
 
 				# Now we handle the rest of the keys.
-				35.times do |i|
+				11.times do |i|
 					c = find_note_from_index(i + start)
-					klass = nil
 
-					if @notes.include? c
-						klass = highlight(c, options[:highlight_intervals])
+					klass, style = if !n.empty? && n.first == c
+						n.delete(c)
+						if options[:highlight_intervals]
+							klass = interval_to_html_class(@intervals, c)
+							style = interval_class_to_style(klass)
+							[ klass, style ]
+						else
+							[ 'note', interval_class_to_style('note') ]
+						end
 					end
 
 					# This section here draws our keys. Each section
@@ -90,33 +104,36 @@ class Music::Keyboard::Scale
 					# top half of a keyboard layout.
 					case c
 						when 'D', 'G', 'A'
-							xml.td(nil, :class => "key-c #{klass}")
+							xml.td(nil, :class => "key-c #{klass}", :style => style)
 
 						when 'C#', 'D#', 'F#', 'G#', 'A#'
-							xml.td(nil, :class => "key-r-b #{klass}")
-							xml.td(nil, :class => "key-l-b #{klass}")
+							xml.td(nil, :class => "key-r-b #{klass}", :style => style)
+							xml.td(nil, :class => "key-l-b #{klass}", :style => style)
 
 						when 'B', 'E'
-							xml.td(nil, :class => "key-c #{klass}")
-							xml.td(nil, :class => "key-r #{klass}")
+							xml.td(nil, :class => "key-c #{klass}", :style => style)
+							xml.td(nil, :class => "key-r #{klass}", :style => style)
 
 						when 'C', 'F'
-							xml.td(nil, :class => "key-l #{klass}")
-							xml.td(nil, :class => "key-c #{klass}")
-
+							xml.td(nil, :class => "key-l #{klass}", :style => style)
+							xml.td(nil, :class => "key-c #{klass}", :style => style)
 					end
 				end
 			end
 
 			# This next section draws the bottom half of the keyboard.
 			xml.tr(:class => 'bottom-half') do
+				n = @notes.dup
+				# Since we're only dealing with white keys here, filter
+				# out all of the sharps/flats.
 				bottom_notes = NOTES.select { |x| x.length == 1 }
 
 				# Again, we're starting with C, so we need to do some
 				# special work to colour it in if necessary.
 				start = NOTES.index('C')
 
-				if @notes.include? 'C'
+				if n.first == 'C'
+					n.delete('C')
 					klass = highlight('C', options[:highlight_intervals])
 				end
 
@@ -125,7 +142,7 @@ class Music::Keyboard::Scale
 
 				# This time we only use 20 this time since we only have
 				# 20 white keys.
-				20.times do |i|
+				6.times do |i|
 					c = bottom_notes[(i + start).modulo(bottom_notes.length)]
 					klass = nil
 
@@ -134,8 +151,11 @@ class Music::Keyboard::Scale
 					# the note from left to right. Once we've found a
 					# note we need we kick it out of the n Array and
 					# continue on.
-					if @notes.include? c
+					if !n.empty? && n.first == c
+						n.shift
 						klass = highlight(c, options[:highlight_intervals])
+					else
+						n.shift if n.first =~ /\#$/
 					end
 
 					xml.td(nil, :class => "key-l #{klass}")
@@ -164,7 +184,7 @@ class Music::Keyboard::Scale
 
 		if options[:show_notes]
 			retval += "   "
-			35.times do |i|
+			11.times do |i|
 				c = find_note_from_index(i + start)
 				case c
 					when 'C#', 'D#', 'F#', 'G#', 'A#'
@@ -180,24 +200,26 @@ class Music::Keyboard::Scale
 
 		# This first bit is for the top of the chart.
 		retval += "╔"
-		retval += "═╤═══╤╤═══╤═╤═╤═══╤╤═══╤╤═══╤═╤" * 3
+		retval += "═╤═══╤╤═══╤═╤═╤═══╤╤═══╤╤═══╤═╤"
 		retval += "╗\n"
 
 		# This next bit extends the keys down a couple of lines.
 		5.times do
 				retval += "║"
-				retval += " │   ││   │ │ │   ││   ││   │ │" * 3
+				retval += " │   ││   │ │ │   ││   ││   │ │"
 				retval += "║\n"
 		end
 
 		# This section fills in the black keys with interval symbols
 		# as necessary.
 		retval += "║ │"
-		35.times do |i|
+		n = @notes.select { |x| x.length == 2 }
+		11.times do |i|
 			c = find_note_from_index(i + start)
 			case c
 				when 'C#', 'D#', 'F#', 'G#', 'A#'
-					if @notes.include? c
+					if !n.empty? && n.first == c
+						n.delete(c)
 						retval += (symbols.detect { |x| x[0] == c }[1]).rjust(3) + "│"
 					else
 						retval += "   │"
@@ -215,50 +237,51 @@ class Music::Keyboard::Scale
 		# This section is for the bottom of the black keys and
 		# concludes the top half of the diagram.
 		retval += "║"
-		retval += " └─┬─┘└─┬─┘ │ └─┬─┘└─┬─┘└─┬─┘ │" * 3
+		retval += " └─┬─┘└─┬─┘ │ └─┬─┘└─┬─┘└─┬─┘ │"
 		retval += "║\n"
 
 		# Next we extend the white keys down a bit.
 		4.times do
-				retval += "║"
-				retval += "   │    │   │   │    │    │   │" * 3
-				retval += "║\n"
+			retval += "║"
+			retval += "   │    │   │   │    │    │   │"
+			retval += "║\n"
 		end
 
+		n = @notes.dup
 		bottom_notes = NOTES.select { |x| x.length == 1 }
 		start = NOTES.index('B')
 
 		# This section labels the white keys as necessary.
 		retval += "║"
-		21.times do |i|
+		7.times do |i|
 			c = bottom_notes[(i + start).modulo(bottom_notes.length)]
+
+			if !n.empty? && n.first == c
+				n.shift
+				interval = symbols.detect { |x| x[0] == c }[1]
+			else
+				n.shift if n.first =~ /\#$/
+				interval = ''
+			end
 
 			case c
 				when 'B', 'C', 'E', 'F'
-					if @notes.include? c
-						retval += (symbols.detect { |x| x[0] == c }[1]).rjust(3) + "│"
-					else
-						retval += "   │"
-					end
+					retval += interval.rjust(3) + "│"
 
 				when 'D', 'G', 'A'
-					if @notes.include? c
-						retval += (symbols.detect { |x| x[0] == c }[1]).rjust(4) + "│"
-					else
-						retval += "    │"
-					end
+					retval += interval.rjust(4) + "│"
 			end
 		end
 		retval += "║\n"
 
 		# Finally, the bottom part of our chart.
 		retval += "╚"
-		retval += "═══╧════╧═══╧═══╧════╧════╧═══╧" * 3
+		retval += "═══╧════╧═══╧═══╧════╧════╧═══╧"
 		retval += "╝\n"
 
 		if options[:show_notes]
 			retval += " "
-			21.times do |i|
+			7.times do |i|
 				c = bottom_notes[(i + start).modulo(bottom_notes.length)]
 
 				case c

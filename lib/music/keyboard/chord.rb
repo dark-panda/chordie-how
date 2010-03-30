@@ -5,7 +5,6 @@ require 'music/midi'
 require 'music/utils'
 require 'music/keyboard/utils'
 
-# The Chord class in this module is used for displaying a chord.
 class Music::Keyboard::Chord
 	include Music::Midi
 	include Music::Utils
@@ -18,28 +17,29 @@ class Music::Keyboard::Chord
 	# The only option at the moment is :type, which would be one of
 	# the chord types from CHORD_TYPES. You can also use an Array of
 	# intervals if you wish. See find_chord_notes for details.
-	def initialize key, options = {}
+	def initialize key, type, options = {}
 		options = {
-			:type => nil
 		}.merge options
 
 		@key = key
-		@type = options[:type]
+		@type = find_chord_type(type)
 		@notes = find_chord_notes(@key, @type)
 		@intervals = find_intervals(@key, @notes)
 	end
 
-	# Builds and returns the chord in an HTML table. The table is
-	# basically built using two rows: one for the black keys and the
-	# top halves of the white keys and one for the bottom halves of
-	# the white keys. Using some clever use of colspans we can have a
-	# decent looking keyboard using only HTML and a bit of CSS for
-	# flavouring.
+	# Build an HTML table displaying the scale.
+	#
+	# * :show_notes - include a row containing the note names across
+	#   the top of the table. Default is true.
+	# * :highlight_intervals - use CSS to colour in the keys using
+	#   our interval colours. Default is true.
+	# * :class - the CSS class to give the table. The default is
+	#   "keyboard-diagram".
 	def to_html options = {}
 		options = {
-			:class => 'keyboard-diagram',
+			:show_notes => true,
 			:highlight_intervals => true,
-			:show_notes => true
+			:class => 'keyboard-diagram'
 		}.merge options
 
 		xml = Builder::XmlMarkup.new(:indent => 4)
@@ -55,7 +55,7 @@ class Music::Keyboard::Chord
 			if options[:show_notes]
 				xml.tr(:class => 'notes') do
 					xml.td('C')
-					35.times do |i|
+					11.times do |i|
 						c = find_note_from_index(i + start)
 						xml.td(c,
 							[ 'A', 'D', 'G' ].include?(c) ? {} : { :colspan => '2' }
@@ -66,7 +66,7 @@ class Music::Keyboard::Chord
 
 			# This next section handles the black keys and the top
 			# halves of the white keys.
-			xml.tr(:class => 'top_half') do
+			xml.tr(:class => 'top-half') do
 				n = @notes.dup
 
 				# If n is C (our first key) then we need to colour
@@ -85,7 +85,7 @@ class Music::Keyboard::Chord
 				xml.td(nil, attributes)
 
 				# Now we handle the rest of the keys.
-				35.times do |i|
+				11.times do |i|
 					c = find_note_from_index(i + start)
 
 					klass, style = if !n.empty? && n.first == c
@@ -147,7 +147,7 @@ class Music::Keyboard::Chord
 
 				# This time we only use 20 this time since we only have
 				# 20 white keys.
-				20.times do |i|
+				6.times do |i|
 					c = bottom_notes[(i + start).modulo(bottom_notes.length)]
 					klass = nil
 
@@ -171,7 +171,10 @@ class Music::Keyboard::Chord
 		end
 	end
 
-	# Builds a String that can be used to display the chord as plaintext.
+	# Displays the scale using some ASCII art.
+	#
+	# * :show_notes - whether or not to display the note names across
+	#   and below the generated ASCII art. Default is true.
 	def to_txt options = {}
 		options = {
 			:show_notes => true
@@ -186,7 +189,7 @@ class Music::Keyboard::Chord
 
 		if options[:show_notes]
 			retval += "   "
-			35.times do |i|
+			11.times do |i|
 				c = find_note_from_index(i + start)
 				case c
 					when 'C#', 'D#', 'F#', 'G#', 'A#'
@@ -202,13 +205,13 @@ class Music::Keyboard::Chord
 
 		# This first bit is for the top of the chart.
 		retval += "╔"
-		retval += "═╤═══╤╤═══╤═╤═╤═══╤╤═══╤╤═══╤═╤" * 3
+		retval += "═╤═══╤╤═══╤═╤═╤═══╤╤═══╤╤═══╤═╤"
 		retval += "╗\n"
 
 		# This next bit extends the keys down a couple of lines.
 		5.times do
 				retval += "║"
-				retval += " │   ││   │ │ │   ││   ││   │ │" * 3
+				retval += " │   ││   │ │ │   ││   ││   │ │"
 				retval += "║\n"
 		end
 
@@ -216,7 +219,7 @@ class Music::Keyboard::Chord
 		# as necessary.
 		retval += "║ │"
 		n = @notes.select { |x| x.length == 2 }
-		35.times do |i|
+		11.times do |i|
 			c = find_note_from_index(i + start)
 			case c
 				when 'C#', 'D#', 'F#', 'G#', 'A#'
@@ -239,14 +242,14 @@ class Music::Keyboard::Chord
 		# This section is for the bottom of the black keys and
 		# concludes the top half of the diagram.
 		retval += "║"
-		retval += " └─┬─┘└─┬─┘ │ └─┬─┘└─┬─┘└─┬─┘ │" * 3
+		retval += " └─┬─┘└─┬─┘ │ └─┬─┘└─┬─┘└─┬─┘ │"
 		retval += "║\n"
 
 		# Next we extend the white keys down a bit.
 		4.times do
-				retval += "║"
-				retval += "   │    │   │   │    │    │   │" * 3
-				retval += "║\n"
+			retval += "║"
+			retval += "   │    │   │   │    │    │   │"
+			retval += "║\n"
 		end
 
 		n = @notes.dup
@@ -255,7 +258,7 @@ class Music::Keyboard::Chord
 
 		# This section labels the white keys as necessary.
 		retval += "║"
-		21.times do |i|
+		7.times do |i|
 			c = bottom_notes[(i + start).modulo(bottom_notes.length)]
 
 			if !n.empty? && n.first == c
@@ -278,12 +281,12 @@ class Music::Keyboard::Chord
 
 		# Finally, the bottom part of our chart.
 		retval += "╚"
-		retval += "═══╧════╧═══╧═══╧════╧════╧═══╧" * 3
+		retval += "═══╧════╧═══╧═══╧════╧════╧═══╧"
 		retval += "╝\n"
 
 		if options[:show_notes]
 			retval += " "
-			21.times do |i|
+			7.times do |i|
 				c = bottom_notes[(i + start).modulo(bottom_notes.length)]
 
 				case c
