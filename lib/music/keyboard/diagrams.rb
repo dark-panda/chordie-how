@@ -353,6 +353,10 @@ module Music::Keyboard::Diagrams
 		image
 	end
 
+	def to_png(options = {})
+		self.to_image(options).png
+	end
+
 	def white_key(image, note, offset = 0)
 		image.draw do |pen|
 			if color = interval_to_gd2_color(@intervals, note)
