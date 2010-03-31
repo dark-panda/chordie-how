@@ -94,5 +94,16 @@ module Music
 				}
 			}
 		end
+
+		# Converts the name of the interval to a suitable HTML class.
+		def interval_to_gd2_color(intervals, note)
+			note = find_note_from_index(note) if note.is_a?(Fixnum)
+
+			if klass = intervals.detect { |x| x[0] == note }
+				COLORS[klass.last.gsub(/[^a-z]/, '-').to_sym]
+			else
+				nil
+			end
+		end
 	end
 end
