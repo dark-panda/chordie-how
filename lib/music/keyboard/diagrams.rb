@@ -12,6 +12,13 @@ module Music::Keyboard::Diagrams
 	include Music::Image
 	include Music::Keyboard::Utils
 
+	def self.included(base)
+		base.instance_eval do
+			protected :white_key
+			protected :black_key
+		end
+	end
+
 	# Build an HTML table displaying the scale.
 	#
 	# * :show_notes - include a row containing the note names across
