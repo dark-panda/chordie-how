@@ -154,7 +154,7 @@ module Music
 			def find_intervals(root, notes = NOTES)
 				start = find_note_from_char(root)
 				retval = Array.new
-				notes.to_a.each do |v|
+				Array(notes).each do |v|
 					n = interval_or_note_to_interval(start, v)
 					name = case n
 						when 0
@@ -211,7 +211,7 @@ module Music
 			def find_symbols(root, notes = NOTES)
 				start = find_note_from_char(root)
 				retval = Array.new
-				notes.to_a.each do |v|
+				Array(notes).each do |v|
 					n = interval_or_note_to_interval(start, v)
 					symbol = case n
 						when 0
@@ -266,7 +266,7 @@ module Music
 			def find_single_symbols(root, notes = NOTES)
 				start = find_note_from_char(root)
 				retval = Array.new
-				notes.to_a.each do |v|
+				Array(notes).each do |v|
 					n = interval_or_note_to_interval(start, v)
 					symbol = case n
 						when 0
@@ -321,7 +321,7 @@ module Music
 			def find_degrees(root, notes = NOTES)
 				start = find_note_from_char(root)
 				retval = Array.new
-				notes.to_a.each do |v|
+				Array(notes).each do |v|
 					n = interval_or_note_to_interval(start, v)
 					degree = case n
 						when 0
@@ -370,7 +370,7 @@ module Music
 			def find_characteristics(root, notes = NOTES)
 				start = find_note_from_char(root)
 				retval = Array.new
-				notes.to_a.each do |v|
+				Array(notes).each do |v|
 					n = interval_or_note_to_interval(start, v)
 					characteristic = case n
 						when 0
