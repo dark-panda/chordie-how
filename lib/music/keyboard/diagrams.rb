@@ -325,7 +325,6 @@ module Music::Keyboard::Diagrams
 			# back to default colours
 			pen.color = image.palette.resolve(COLORS[:black])
 
-			pen.font = GD2::Font::TrueType[FONT_PATH, 10]
 			pen.thickness = 2
 			pen.rectangle(5, 5, 340, 320)
 
@@ -363,18 +362,25 @@ module Music::Keyboard::Diagrams
 				pen.color = image.palette.resolve(color[:bg])
 				pen.move_to(20 + (offset * 48), 300)
 				pen.fill
+				pen.color = image.palette.resolve(color[:fg])
+				pen.font = GD2::Font::TrueType[FONT_PATH, 12]
+				pen.text find_single_symbols(@key, note).first.last
 			end
 		end
 	end
 
 	def black_key(image, note, offset = 0)
 		image.draw do |pen|
-			pen.color = if color = interval_to_gd2_color(@intervals, note)
-				image.palette.resolve(color[:bg])
+			bg, fg = if color = interval_to_gd2_color(@intervals, note)
+				[
+					image.palette.resolve(color[:bg]),
+					image.palette.resolve(color[:fg])
+				]
 			else
 				image.palette.resolve(COLORS[:black])
 			end
 
+			pen.color = bg
 			offset = offset * 48
 			width_offset = 30 + offset
 			pen.rectangle(
@@ -382,6 +388,13 @@ module Music::Keyboard::Diagrams
 				width_offset + 38, 180,
 				true
 			)
+
+			if fg
+				pen.color = image.palette.resolve(color[:fg])
+				pen.font = GD2::Font::TrueType[FONT_PATH, 12]
+				pen.move_to(44 + offset, 160)
+				pen.text find_single_symbols(@key, note).first.last
+			end
 		end
 	end
 end
