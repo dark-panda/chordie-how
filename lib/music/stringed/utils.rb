@@ -63,9 +63,8 @@ module Music::Stringed
 		# * :span is an integer indictating possible fingerspan on the
 		#   fretboard
 		# * :capo is the fret number the capo is on
-		# * :refine is a boolean to determine whether or not we should
-		#    refine the chord so that it's bass note is the key, i.e. we
-		#    shouldn't show any inversions
+		# * :inversions is a boolean to determine whether or not we should
+		#    look for any inversions
 		# * :limit the number of results
 		def find_chords(key, type, options = {})
 			options = {
@@ -74,7 +73,7 @@ module Music::Stringed
 				:min_fret => 0,
 				:max_fret => 12,
 				:capo => 0,
-				:refine => true,
+				:inversions => false,
 				:limit => nil
 			}.merge options
 
@@ -159,7 +158,7 @@ module Music::Stringed
 					# our bass note is the first in line. If we don't
 					# bother to do this step, then you'll get all of the
 					# possible inversions in the resulting array.
-					if options[:refine]
+					unless options[:inversions]
 						chords.each_with_index do |c, i|
 							unless refine_chord(key, c, chord_notes)
 								chords[i] = nil
@@ -180,7 +179,7 @@ module Music::Stringed
 				# If there are no strings with multiple notes, just add the
 				# chord to the pile.
 				else
-					if options[:refine]
+					unless options[:inversions]
 						refine_chord(key, f, chord_notes)
 					end
 					retval << f if check_chord(f, chord_notes) && !retval.include?(f)
