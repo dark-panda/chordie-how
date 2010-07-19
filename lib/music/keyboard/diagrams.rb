@@ -63,7 +63,7 @@ module Music::Keyboard::Diagrams
 
 				# If n is C (our first key) then we need to colour
 				# it.
-				attributes = if n.first == 'C'
+				attributes = if n.include?('C')
 					n.delete('C')
 					if options[:highlight_intervals]
 						klass = interval_to_html_class(@intervals, 'C')
@@ -80,7 +80,7 @@ module Music::Keyboard::Diagrams
 				11.times do |i|
 					c = find_note_from_index(i + start)
 
-					klass, style = if !n.empty? && n.first == c
+					klass, style = if !n.empty? && n.include?(c)
 						n.delete(c)
 						if options[:highlight_intervals]
 							klass = interval_to_html_class(@intervals, c)
@@ -129,7 +129,7 @@ module Music::Keyboard::Diagrams
 				# special work to colour it in if necessary.
 				start = NOTES.index('C')
 
-				if n.first == 'C'
+				if n.include?('C')
 					n.delete('C')
 					klass = highlight('C', options[:highlight_intervals])
 				end
@@ -137,8 +137,8 @@ module Music::Keyboard::Diagrams
 				xml.td(nil, :class => "key-l-e #{klass}")
 				xml.td(nil, :class => "key-r #{klass}")
 
-				# This time we only use 20 this time since we only have
-				# 20 white keys.
+				# This time we only use 6 this time since we only have
+				# 6 white keys.
 				6.times do |i|
 					c = bottom_notes[(i + start).modulo(bottom_notes.length)]
 					klass = nil
@@ -148,11 +148,11 @@ module Music::Keyboard::Diagrams
 					# the note from left to right. Once we've found a
 					# note we need we kick it out of the n Array and
 					# continue on.
-					if !n.empty? && n.first == c
-						n.shift
+					if !n.empty? && n.include?(c)
+						n.delete(c)
 						klass = highlight(c, options[:highlight_intervals])
 					else
-						n.shift if n.first =~ /\#$/
+						n.delete(c) if c =~ /\#$/
 					end
 
 					xml.td(nil, :class => "key-l #{klass}")
@@ -215,7 +215,7 @@ module Music::Keyboard::Diagrams
 			c = find_note_from_index(i + start)
 			case c
 				when 'C#', 'D#', 'F#', 'G#', 'A#'
-					if !n.empty? && n.first == c
+					if !n.empty? && n.include?(c)
 						n.delete(c)
 						retval += (symbols.detect { |x| x[0] == c }[1]).rjust(3) + "│"
 					else
@@ -253,11 +253,11 @@ module Music::Keyboard::Diagrams
 		7.times do |i|
 			c = bottom_notes[(i + start).modulo(bottom_notes.length)]
 
-			if !n.empty? && n.first == c
-				n.shift
+			if !n.empty? && n.include?(c)
+				n.delete(c)
 				interval = symbols.detect { |x| x[0] == c }[1]
 			else
-				n.shift if n.first =~ /\#$/
+				n.delete(c) if c =~ /\#$/
 				interval = ''
 			end
 
