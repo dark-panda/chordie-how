@@ -17,14 +17,14 @@ module Music::Stringed
 		# returns the notes found on open strings.
 		def find_open_strings(tuning, capo = 0)
 			begin
-				t = if Symbol === tuning || String === tuning
+				t = if [ Symbol, String ].include?(tuning.class)
 					tuning = tuning.to_sym
 					if TUNINGS[tuning]
 						TUNINGS[tuning][:tuning]
 					else
 						raise "not found in TUNINGS"
 					end
-				elsif Array === tuning
+				elsif tuning.is_a?(Array)
 					tuning
 				else
 					raise "must be a Symbol, String or Array"
@@ -44,8 +44,8 @@ module Music::Stringed
 
 		# find the name of the notes in n. n will be converted to an Array,
 		# and the method itself always returns an Array.
-		def find_notes n, capo = 0
-			if Array === n
+		def find_notes(n, capo = 0)
+			if n.is_a?(Array)
 				n.collect do |x|
 					find_note_from_index(x + capo)
 				end
