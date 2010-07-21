@@ -115,6 +115,21 @@ module Music
 					:tuning => %w{ D G D G B E }
 				},
 
+				:e9 => {
+					:name => 'E9',
+					:tuning => %w{ E G# B D F# G# B E }
+				},
+
+				:e7 => {
+					:name => 'E7',
+					:tuning => %W{ B D E G# B E }
+				},
+
+				:e6 => {
+					:name => 'E6',
+					:tuning => %{ E G# B C# E G# }
+				},
+
 				:standard_seven_string => {
 					:name => '7 string standard',
 					:tuning => %w{ B E A D G B E }
