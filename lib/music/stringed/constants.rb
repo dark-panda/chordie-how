@@ -217,32 +217,32 @@ module Music
 			}.freeze
 
 			CSS_STYLES = {
-				:'table.chord-diagram' => [
-					'margin: 10px;',
-					'background-color: white;'
-				],
+				:'table.chord-diagram' => {
+					:'margin' => '10px',
+					:'background-color' => 'white'
+				},
 
-				:'table.scale-diagram' => [
-					'background-color: white;',
-					'margin: 0px auto;',
-					'margin-bottom: 10px;'
-				],
+				:'table.scale-diagram' => {
+					:'background-color' => 'white',
+					:'margin' => '0px auto',
+					:'margin-bottom' => '10px'
+				},
 
-				:'table.chord-diagram td' => [
-					'border: 1px solid #cccccc;',
-					'width: 2em;',
-					'height: 2em;',
-					'text-align: center;',
-					'font-size: small;'
-				],
+				:'table.chord-diagram td' => {
+					:'border' => '1px solid #cccccc',
+					:'width' => '2em',
+					:'height' => '2em',
+					:'text-align' => 'center',
+					:'font-size' => 'small'
+				},
 
-				:'table.scale-diagram td' => [
-					'border: 1px solid #cccccc;',
-					'width: 2em;',
-					'height: 2em;',
-					'text-align: center;',
-					'font-size: small;'
-				]
+				:'table.scale-diagram td' => {
+					'border' => '1px solid #cccccc',
+					'width' => '2em',
+					'height' => '2em',
+					'text-align' => 'center',
+					'font-size' => 'small'
+				}
 			}.freeze
 		end
 	end
