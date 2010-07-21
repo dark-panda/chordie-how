@@ -9,23 +9,65 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["J Smith"]
-  s.date = %q{2010-03-27}
+  s.date = %q{2010-07-21}
   s.description = %q{A library for generating chord and scale charts for a variety of musical instruments.}
   s.email = %q{dark.panda@gmail.com}
+  s.files = [
+    ".gitignore",
+     "MIT-LICENSE",
+     "Rakefile",
+     "lib/music.rb",
+     "lib/music/constants.rb",
+     "lib/music/gd2_extensions.rb",
+     "lib/music/harmonica.rb",
+     "lib/music/harmonica/constants.rb",
+     "lib/music/harmonica/scale.rb",
+     "lib/music/image.rb",
+     "lib/music/keyboard.rb",
+     "lib/music/keyboard/chord.rb",
+     "lib/music/keyboard/diagrams.rb",
+     "lib/music/keyboard/scale.rb",
+     "lib/music/keyboard/utils.rb",
+     "lib/music/midi.rb",
+     "lib/music/stringed.rb",
+     "lib/music/stringed/chord.rb",
+     "lib/music/stringed/constants.rb",
+     "lib/music/stringed/scale.rb",
+     "lib/music/stringed/utils.rb",
+     "lib/music/utils.rb",
+     "music.gemspec",
+     "test/resources/stringed/c_major_abcdefg.yml",
+     "test/resources/stringed/c_major_standard.yml",
+     "test/stringed_test.rb",
+     "test/stringed_utils_test.rb",
+     "test/test_helper.rb",
+     "test/utils_test.rb",
+     "vendor/fonts/ttf/DejaVuSans.ttf",
+     "vendor/fonts/ttf/LICENSE"
+  ]
   s.homepage = %q{http://github.com/dark-panda/music}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{A library for generating chord and scale charts for a variety of musical instruments.}
+  s.test_files = [
+    "test/stringed_test.rb",
+     "test/stringed_utils_test.rb",
+     "test/test_helper.rb",
+     "test/utils_test.rb"
+  ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<gd2-ffij>, [">= 0"])
     else
+      s.add_dependency(%q<gd2-ffij>, [">= 0"])
     end
   else
+    s.add_dependency(%q<gd2-ffij>, [">= 0"])
   end
 end
 
