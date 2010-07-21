@@ -13,11 +13,7 @@ module Music
 			def find_scale_pattern(pattern)
 				case pattern
 					when Symbol, String
-						if SCALE_PATTERNS[pattern.to_sym]
-							SCALE_PATTERNS[pattern.to_sym][:pattern]
-						else
-							raise BadScalePattern.new(pattern)
-						end
+						SCALE_PATTERNS[pattern.to_sym][:pattern] rescue raise BadScalePattern.new(pattern)
 					when Hash
 						pattern[:pattern]
 					when Array
@@ -31,11 +27,7 @@ module Music
 			def find_chord_type(t)
 				case t
 					when Symbol, String
-						if CHORD_TYPES[t.to_sym]
-							CHORD_TYPES[t.to_sym][:intervals]
-						else
-							raise BadChordType.new(t)
-						end
+						CHORD_TYPES[t.to_sym][:intervals] rescue raise BadChordType.new(t)
 					when Hash
 						t[:intervals]
 					when Array
@@ -124,7 +116,7 @@ module Music
 				start = find_note_from_char(key)
 
 				find_chord_type(type).collect do |v|
-					find_note_from_index(start + v.to_i)
+					find_note_from_index(start + v)
 				end
 			end
 
@@ -140,7 +132,7 @@ module Music
 					when Fixnum
 						interval
 					else
-						raise BadNote.new(v)
+						raise BadNote.new(interval)
 				end
 			end
 
