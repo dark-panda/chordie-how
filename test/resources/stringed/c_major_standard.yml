@@ -1,0 +1,1424 @@
+--- 
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    1: &id001 
+      3: C
+    2: &id002 
+      2: E
+    3: &id003 
+      0: G
+    4: &id004 
+      1: C
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 3
+  min_fret: 1
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      3: G
+    1: *id001
+    2: *id002
+    3: *id003
+    4: *id004
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 3
+  min_fret: 1
+  notes: 
+  - G
+  - C
+  - E
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    1: &id005 
+      3: C
+    2: &id006 
+      5: G
+    3: &id007 
+      5: C
+    4: &id008 
+      5: E
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 5
+  min_fret: 3
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      3: G
+    1: *id005
+    2: *id006
+    3: *id007
+    4: *id008
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 5
+  min_fret: 3
+  notes: 
+  - G
+  - C
+  - E
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    1: *id005
+    2: *id006
+    3: &id009 
+      0: G
+    4: &id010 
+      5: E
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 5
+  min_fret: 3
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      3: G
+    1: *id005
+    2: *id006
+    3: *id009
+    4: *id010
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 5
+  min_fret: 3
+  notes: 
+  - G
+  - C
+  - E
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      3: G
+    1: *id005
+    2: &id011 
+      2: E
+    3: 
+      5: C
+    4: 
+      5: E
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 5
+  min_fret: 2
+  notes: 
+  - G
+  - C
+  - E
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    1: *id005
+    2: *id011
+    3: &id012 
+      0: G
+    4: &id013 
+      5: E
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 5
+  min_fret: 2
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      3: G
+    1: *id005
+    2: *id011
+    3: *id012
+    4: *id013
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 5
+  min_fret: 2
+  notes: 
+  - G
+  - C
+  - E
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    3: 
+      5: C
+    4: 
+      8: G
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 8
+  min_fret: 5
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    0: &id014 
+      8: C
+    1: &id015 
+      7: E
+    2: &id016 
+      5: G
+    3: &id017 
+      5: C
+    4: &id018 
+      5: E
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 8
+  min_fret: 5
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      8: C
+    0: *id014
+    1: *id015
+    2: *id016
+    3: *id017
+    4: *id018
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 8
+  min_fret: 5
+  notes: 
+  - C
+  - E
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    0: *id014
+    1: *id015
+    2: *id016
+    3: *id017
+    4: &id019 
+      8: G
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 8
+  min_fret: 5
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      8: C
+    0: *id014
+    1: *id015
+    2: *id016
+    3: *id017
+    4: *id019
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 8
+  min_fret: 5
+  notes: 
+  - C
+  - E
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    0: *id014
+    1: *id015
+    2: *id016
+    3: &id020 
+      0: G
+    4: &id021 
+      5: E
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 8
+  min_fret: 5
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      8: C
+    0: *id014
+    1: *id015
+    2: *id016
+    3: *id020
+    4: *id021
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 8
+  min_fret: 5
+  notes: 
+  - C
+  - E
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    0: *id014
+    1: *id015
+    2: *id016
+    3: *id020
+    4: &id022 
+      8: G
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 8
+  min_fret: 5
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      8: C
+    0: *id014
+    1: *id015
+    2: *id016
+    3: *id020
+    4: *id022
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 8
+  min_fret: 5
+  notes: 
+  - C
+  - E
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    0: &id023 
+      8: C
+    1: &id024 
+      7: E
+    3: &id025 
+      0: G
+    4: &id026 
+      8: G
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 8
+  min_fret: 7
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      8: C
+    0: *id023
+    1: *id024
+    3: *id025
+    4: *id026
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 8
+  min_fret: 7
+  notes: 
+  - C
+  - E
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    0: *id023
+    1: *id024
+    3: &id027 
+      9: E
+    4: &id028 
+      8: G
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 9
+  min_fret: 7
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      8: C
+    0: *id023
+    1: *id024
+    3: *id027
+    4: *id028
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 9
+  min_fret: 7
+  notes: 
+  - C
+  - E
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    2: &id029 
+      10: C
+    3: 
+      0: G
+    4: 
+      8: G
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 10
+  min_fret: 8
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    2: *id029
+    3: &id030 
+      9: E
+    4: &id031 
+      8: G
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 10
+  min_fret: 8
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      8: C
+    2: *id029
+    3: *id030
+    4: *id031
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 10
+  min_fret: 8
+  notes: 
+  - C
+  - E
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    0: &id032 
+      8: C
+    1: &id033 
+      7: E
+    2: &id034 
+      10: C
+    3: &id035 
+      0: G
+    4: &id036 
+      8: G
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 10
+  min_fret: 7
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      8: C
+    0: *id032
+    1: *id033
+    2: *id034
+    3: *id035
+    4: *id036
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 10
+  min_fret: 7
+  notes: 
+  - C
+  - E
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    0: *id032
+    1: *id033
+    2: *id034
+    3: &id037 
+      9: E
+    4: &id038 
+      8: G
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 10
+  min_fret: 7
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      8: C
+    0: *id032
+    1: *id033
+    2: *id034
+    3: *id037
+    4: *id038
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 10
+  min_fret: 7
+  notes: 
+  - C
+  - E
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    0: *id032
+    1: &id039 
+      10: G
+    2: &id040 
+      10: C
+    3: 
+      0: G
+    4: 
+      8: G
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 10
+  min_fret: 8
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    0: *id032
+    1: *id039
+    2: *id040
+    3: &id041 
+      9: E
+    4: &id042 
+      8: G
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 10
+  min_fret: 8
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      8: C
+    0: *id032
+    1: *id039
+    2: *id040
+    3: *id041
+    4: *id042
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 10
+  min_fret: 8
+  notes: 
+  - C
+  - G
+  - E
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    2: &id043 
+      10: C
+    3: &id044 
+      0: G
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 10
+  min_fret: 10
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      12: E
+    2: *id043
+    3: *id044
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 12
+  min_fret: 10
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      0: E
+    2: *id043
+    3: &id045 
+      12: G
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 12
+  min_fret: 10
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
+- !ruby/object:Music::Stringed::Chord 
+  capo: 0
+  fingering: 
+    5: 
+      12: E
+    2: *id043
+    3: *id045
+  intervals: 
+  - - C
+    - tonic
+  - - E
+    - major third
+  - - G
+    - perfect fifth
+  key: C
+  max_fret: 12
+  min_fret: 10
+  notes: 
+  - E
+  - C
+  - G
+  tuning: 
+  - 7
+  - 0
+  - 5
+  - 10
+  - 2
+  - 7
+  tuning_notes: 
+  - E
+  - A
+  - D
+  - G
+  - B
+  - E
+  type: :major
