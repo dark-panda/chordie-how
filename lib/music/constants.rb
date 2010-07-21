@@ -235,83 +235,83 @@ module Music
 		}.freeze
 
 		INTERVAL_CSS_STYLES = {
-			:tonic => [
-				'background-color: #AA1919;',
-				'font-weight: bold;',
-				'color: white;'
-			],
+			:tonic => {
+				'background-color' => '#AA1919',
+				'font-weight' => 'bold',
+				'color' => 'white'
+			},
 
-			:'minor-second' => [
-				'background-color: #00C900;',
-				'font-weight: bold;',
-			],
+			:'minor-second' => {
+				'background-color' => '#00C900',
+				'font-weight' => 'bold',
+			},
 
-			:'major-second' => [
-				'background-color: #005F00;',
-				'font-weight: bold;',
-				'color: white;'
-			],
+			:'major-second' => {
+				'background-color' => '#005F00',
+				'font-weight' => 'bold',
+				'color' => 'white'
+			},
 
-			:'minor-third' => [
-				'background-color: #CA90FF;',
-				'font-weight: bold;',
-			],
+			:'minor-third' => {
+				'background-color' => '#CA90FF',
+				'font-weight' => 'bold',
+			},
 
-			:'major-third' => [
-				'background-color: #9000FF;',
-				'font-weight: bold;',
-				'color: white;'
-			],
+			:'major-third' => {
+				'background-color' => '#9000FF',
+				'font-weight' => 'bold',
+				'color' => 'white'
+			},
 
-			:fourth => [
-				'background-color: #FFDC00;',
-				'font-weight: bold;',
-			],
+			:fourth => {
+				'background-color' => '#FFDC00',
+				'font-weight' => 'bold',
+			},
 
-			:'diminished-fifth' => [
-				'background-color: #FFC990;',
-				'font-weight: bold;',
-			],
+			:'diminished-fifth' => {
+				'background-color' => '#FFC990',
+				'font-weight' => 'bold',
+			},
 
-			:'perfect-fifth' => [
-				'background-color: #FF8E00;',
-				'font-weight: bold;',
-				'color: white;'
-			],
+			:'perfect-fifth' => {
+				'background-color' => '#FF8E00',
+				'font-weight' => 'bold',
+				'color' => 'white'
+			},
 
-			:'minor-sixth' => [
-				'background-color: #B5E3E5;',
-				'font-weight: bold;',
-			],
+			:'minor-sixth' => {
+				'background-color' => '#B5E3E5',
+				'font-weight' => 'bold',
+			},
 
-			:'major-sixth' => [
-				'background-color: #00B4BE;',
-				'font-weight: bold;',
-				'color: white;'
-			],
+			:'major-sixth' => {
+				'background-color' => '#00B4BE',
+				'font-weight' => 'bold',
+				'color' => 'white'
+			},
 
-			:'minor-seventh' => [
-				'background-color: #73A2D7;',
-				'font-weight: bold;',
-			],
+			:'minor-seventh' => {
+				'background-color' => '#73A2D7',
+				'font-weight' => 'bold',
+			},
 
-			:'major-seventh' => [
-				'background-color: #0069BA;',
-				'font-weight: bold;',
-				'color: white;'
-			],
+			:'major-seventh' => {
+				'background-color' => '#0069BA',
+				'font-weight' => 'bold',
+				'color' => 'white'
+			},
 
-			:note => [
-				'color: white;',
-				'background-color: gray;',
-				'font-weight:  bold;'
-			],
+			:note => {
+				'color' => 'white',
+				'background-color' => 'gray',
+				'font-weight' => ' bold'
+			},
 
-			:muted => [
-				'background-color: black;',
-				'font-weight: bold;',
-				'color: white;'
-			]
+			:muted => {
+				'background-color' => 'black',
+				'font-weight' => 'bold',
+				'color' => 'white'
+			}
 		}.freeze
 	end
 end

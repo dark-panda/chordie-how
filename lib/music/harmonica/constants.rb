@@ -130,34 +130,33 @@ module Music
 			}.freeze
 
 			CSS_STYLES = {
-				:'table.harmonica-diagram' => [
-					'border-collapse: collapse;',
-					'border: 1px solid #cccccc;',
-					'text-align: center;',
-					'font-size: small;',
-					'margin: 0pt auto;',
-					'background-color: white;'
-				],
+				:'table.harmonica-diagram' => {
+					'border-collapse' => 'collapse',
+					'border' => '1px solid #cccccc',
+					'text-align' => 'center',
+					'font-size' => 'small',
+					'margin' => '0pt auto',
+					'background-color' => 'white'
+				},
 
-				:'table.harmonica-diagram td' => [
-					'border: 1px solid #cccccc;',
-					'padding: 3px;',
-					'width: 2em;',
-					'height: 2em;'
-				],
+				:'table.harmonica-diagram td' => {
+					'border' => '1px solid #cccccc',
+					'padding' => '3px',
+					'width' => '2em',
+					'height' => '2em'
+				},
 
-				:'table.harmonica-diagram td.empty' => [
-					'background-color: silver;',
-					'border: none;'
-				],
+				:'table.harmonica-diagram td.empty' => {
+					'background-color' => 'silver',
+					'border' => 'none'
+				},
 
-				:'table.harmonica-diagram tr.holes' => [
-					'background-color: black;',
-					'color: white;',
-					'font-weight: bold;'
-				]
+				:'table.harmonica-diagram tr.holes' => {
+					'background-color' => 'black',
+					'color' => 'white',
+					'font-weight' => 'bold'
+				}
 			}.freeze
 		end
 	end
 end
-

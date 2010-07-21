@@ -428,7 +428,7 @@ module Music
 
 			# Converts an interval's class name to a CSS style.
 			def interval_class_to_style(klass)
-				INTERVAL_CSS_STYLES[klass.to_sym].join(' ')
+				build_css(INTERVAL_CSS_STYLES[klass.to_sym])
 			end
 
 
@@ -470,6 +470,13 @@ module Music
 				else
 					z + 12
 				end
+			end
+
+			# Builds some CSS out of a styling Hash.
+			def build_css(styling)
+				styling.inject([]) { |memo, (k, v)|
+					memo << "#{k}: #{v};"
+				}.sort.join(' ')
 			end
 		end
 

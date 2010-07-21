@@ -54,14 +54,14 @@ class Music::Harmonica::Scale
 			bends, max_bend, min_bend = calculate_bends
 		end
 
-		td_style = CSS_STYLES[:'table.harmonica-diagram td'].join(' ')
-		td_empty_style = CSS_STYLES[:'table.harmonica-diagram td.empty'].join(' ')
+		td_style = build_css(CSS_STYLES[:'table.harmonica-diagram td'])
+		td_empty_style = build_css(CSS_STYLES[:'table.harmonica-diagram td.empty'])
 
 		table_attributes = {
 			:class => options[:class]
 		}
 		table_attributes.merge!({
-			:style => CSS_STYLES[:'table.harmonica-diagram'].join(' ')
+			:style => build_css(CSS_STYLES[:'table.harmonica-diagram'])
 		}) if options[:embed_styles]
 
 		xml = Builder::XmlMarkup.new(:indent => 4)
@@ -111,7 +111,7 @@ class Music::Harmonica::Scale
 				:class => 'holes'
 			}
 			tr_attributes.merge!({
-				:style => CSS_STYLES[:'table.harmonica-diagram tr.holes'].join(' ')
+				:style => build_css(CSS_STYLES[:'table.harmonica-diagram tr.holes'])
 			}) if options[:embed_styles]
 
 			xml.tr(tr_attributes) do
