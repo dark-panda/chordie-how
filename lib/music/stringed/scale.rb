@@ -71,7 +71,7 @@ class Music::Stringed::Scale
 		xml.table(:class => options[:class]) do
 			fret_range = (options[:min_fret].to_i..options[:max_fret].to_i).collect
 			fret_range.reverse! if options[:lefty]
-			td_style = CSS_STYLES[:'table.scale-diagram td'].join(' ') if options[:embed_styles]
+			td_style = build_css(CSS_STYLES[:'table.scale-diagram td']) if options[:embed_styles]
 
 			@tuning.reverse_each do |t|
 				xml.tr do
@@ -93,7 +93,7 @@ class Music::Stringed::Scale
 								]
 							end
 						end
-						
+
 						attributes = if klass
 							{ :class => klass }
 						else
