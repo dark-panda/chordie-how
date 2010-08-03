@@ -35,6 +35,11 @@ module Music
 				end
 			end
 
+			# Get a chord's name.
+			def find_chord_name(t)
+				CHORD_TYPES[t.to_sym][:name] rescue raise BadChordType.new(t)
+			end
+
 
 			# Figure out the actual notes in the scale.
 			#
@@ -469,6 +474,24 @@ module Music
 				styling.inject([]) { |memo, (k, v)|
 					memo << "#{k}: #{v};"
 				}.sort.join(' ')
+			end
+
+			# Finds a chord type from the available notes.
+			def find_chords_from_notes(*args)
+				notes = Array(args).flatten.uniq
+				notes.collect { |i|
+					notes.collect { |j|
+						[ low_to_high_distance(i, j), j ]
+					}.sort
+				}.collect { |c|
+					CHORD_TYPES.collect { |k, v|
+						if v[:intervals] == c.collect(&:first)
+							[ c.first.last, k ]
+						end
+					}.compact.flatten
+				}.select { |v|
+					!v.empty?
+				}
 			end
 		end
 
