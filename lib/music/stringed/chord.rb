@@ -194,11 +194,7 @@ class Music::Stringed::Chord
 			end
 		end
 	end
-
-	# Same as to_html.
-	def to_xml(options = {})
-		to_html options
-	end
+	alias :to_xml :to_html
 
 	# Builds a String that can be used to display the chord as plaintext.
 	def to_txt(options = {})
@@ -248,16 +244,14 @@ class Music::Stringed::Chord
 			:lefty => false
 		}.merge options
 
-		retval = String.new
-		@tuning.length.times do |s|
+		@tuning.length.times.collect { |s|
 			s = @tuning.length - s - 1 if options[:lefty]
 			if @fingering[s]
-				retval << "#{@fingering[s].keys} "
+				@fingering[s].keys
 			else
-				retval << 'x '
+				'x'
 			end
-		end
-		return retval
+		}.join(' ')
 	end
 
 	def to_a
