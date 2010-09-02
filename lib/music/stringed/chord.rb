@@ -415,9 +415,9 @@ class Music::Stringed::Chord
 	protected
 
 	def parse_fingering(fingering)
-		if fingering.is_a?(String) && fingering =~ /^(([0-9]+)\s([0-9]+)([A-G]#?)\s?)+$/
+		if fingering.is_a?(String) && fingering.upcase =~ /^(([0-9]+)\s([0-9]+)([A-G]#?)\s?)+$/
 			retval = Hash.new
-			fingering.scan(/([0-9]+)\s([0-9]+)([A-G]#?)/) do |memo, n|
+			fingering.upcase.scan(/([0-9]+)\s([0-9]+)([A-G]#?)/) do |memo, n|
 				retval[$1.to_i] = { $2.to_i => $3 }
 			end
 			retval

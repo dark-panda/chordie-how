@@ -53,7 +53,7 @@ module Music
 			#   representing a pattern.
 			def find_scale_notes(key, pattern)
 				start = find_note_from_char(key)
-				key_notes = [ key ]
+				key_notes = [ key.upcase ]
 
 				find_scale_pattern(pattern).each do |v|
 					start += case v
@@ -105,7 +105,7 @@ module Music
 
 			# Returns the index to NOTES for the note c.
 			def find_note_from_char(c)
-				NOTES.index(c) or
+				NOTES.index(c.upcase) or
 					raise BadNote.new(c)
 			end
 
@@ -138,7 +138,7 @@ module Music
 
 				case interval
 					when String
-						(NOTES.index(interval) - key).modulo(NOTES.length)
+						(NOTES.index(interval.upcase) - key).modulo(NOTES.length)
 					when Fixnum
 						interval
 					else
@@ -154,6 +154,7 @@ module Music
 			# * root is the tonic, a note from NOTES
 			# * notes is an Array of notes
 			def find_intervals(root, notes = NOTES)
+				root = root.upcase
 				start = find_note_from_char(root)
 				retval = Array.new
 				Array(notes).each do |v|
@@ -211,6 +212,7 @@ module Music
 			# * root is the tonic, a note from NOTES
 			# * notes an Array of notes
 			def find_symbols(root, notes = NOTES)
+				root = root.upcase
 				start = find_note_from_char(root)
 				retval = Array.new
 				Array(notes).each do |v|
@@ -266,6 +268,7 @@ module Music
 			# * root is the tonic, a note from NOTES
 			# * notes an Array of notes
 			def find_single_symbols(root, notes = NOTES)
+				root = root.upcase
 				start = find_note_from_char(root)
 				retval = Array.new
 				Array(notes).each do |v|
@@ -321,6 +324,7 @@ module Music
 			# * root is the tonic, a note from NOTES
 			# * notes is an Array of notes
 			def find_degrees(root, notes = NOTES)
+				root = root.upcase
 				start = find_note_from_char(root)
 				retval = Array.new
 				Array(notes).each do |v|
@@ -370,6 +374,7 @@ module Music
 			# * root is the tonic, a note from NOTES
 			# * notes is an Array of notes
 			def find_characteristics(root, notes = NOTES)
+				root = root.upcase
 				start = find_note_from_char(root)
 				retval = Array.new
 				Array(notes).each do |v|
@@ -418,7 +423,11 @@ module Music
 
 			# Converts the name of the interval to a suitable HTML class.
 			def interval_to_html_class(intervals, note)
-				note = find_note_from_index(note) if note.is_a?(Fixnum)
+				note = if note.is_a?(Fixnum)
+					find_note_from_index(note)
+				else
+					note.upcase
+				end
 
 				if klass = intervals.detect { |x| x[0] == note }
 					klass.last.gsub(/[^a-z]/, '-')
