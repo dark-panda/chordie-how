@@ -489,8 +489,9 @@ module Music
 						[ low_to_high_distance(i, j), j ]
 					}.sort
 				}.collect { |c|
+					intervals = c.collect(&:first)
 					CHORD_TYPES.collect { |k, v|
-						if v[:intervals] == c.collect(&:first)
+						if v[:intervals] == intervals
 							[ c.first.last, k ]
 						end
 					}.compact.flatten
