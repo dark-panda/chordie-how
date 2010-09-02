@@ -211,4 +211,8 @@ class UtilsTest < Test::Unit::TestCase
 		assert_equal(2, low_to_high_distance('C', 'D'))
 		assert_equal(9, low_to_high_distance('C', 'A'))
 	end
+
+	def test_find_chords_from_notes
+		assert_equal([["C", :sixth], ["A", :min7]], find_chords_from_notes(%w{ C E G A }))
+	end
 end
