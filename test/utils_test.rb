@@ -25,6 +25,11 @@ class UtilsTest < Test::Unit::TestCase
 		)
 	end
 
+	def test_find_chord_name
+		assert_equal('major', find_chord_name(:major))
+		assert_equal('major', find_chord_name('major'))
+	end
+
 	def test_find_scale_notes
 		assert_equal(%w{ C D E F G A B }, find_scale_notes('C', :major))
 	end
