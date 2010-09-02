@@ -11,6 +11,12 @@ module Music
 		end
 	end
 
+	class BadScaleType < MusicException
+		def initialize(scale_type, msg = nil)
+			super("Bad scale type: #{scale_type} #{msg}")
+		end
+	end
+
 	class BadIntervalName < MusicException
 		def initialize(interval, msg = nil)
 			super("Bad interval name: #{interval} #{msg}")

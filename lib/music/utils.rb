@@ -40,6 +40,11 @@ module Music
 				CHORD_TYPES[t.to_sym][:name] rescue raise BadChordType.new(t)
 			end
 
+			# Get a scales's name.
+			def find_scale_name(t)
+				SCALE_PATTERNS[t.to_sym][:name] rescue raise BadScaleType.new(t)
+			end
+
 
 			# Figure out the actual notes in the scale.
 			#
