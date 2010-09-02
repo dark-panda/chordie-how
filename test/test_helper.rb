@@ -3,6 +3,7 @@ require 'test/unit'
 require 'tmpdir'
 
 require 'rubygems'
+require 'yaml'
 require 'lib/music'
 
 module TestHelper
