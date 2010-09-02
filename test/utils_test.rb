@@ -215,4 +215,22 @@ class UtilsTest < Test::Unit::TestCase
 	def test_find_chords_from_notes
 		assert_equal([["C", :sixth], ["A", :min7]], find_chords_from_notes(%w{ C E G A }))
 	end
+
+	def test_find_scales_from_notes
+		assert_equal({
+			"A" => [:natural_minor, :aeolian],
+			"B" => [:locrian],
+			"C" => [:major, :ionian],
+			"D" => [:dorian],
+			"E" => [:phrygian],
+			"F" => [:lydian],
+			"G" => [:mixolydian]
+		}, find_scales_from_notes(%w{ C D E F G A B }))
+
+		assert_equal({
+			"A" => [:harmonic_minor],
+			"E" => [:spanish_gypsy, :altered],
+			"F" => [:melodic_minor]
+		}, find_scales_from_notes(%w{ c d e f g# }))
+	end
 end

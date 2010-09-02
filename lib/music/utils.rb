@@ -499,6 +499,21 @@ module Music
 					!v.empty?
 				}
 			end
+
+			# Finds suiteable scales from the available notes.
+			def find_scales_from_notes(*args)
+				notes = Array(args).flatten.collect(&:upcase).uniq.sort
+				NOTES.inject({}) { |memo, key|
+					SCALE_PATTERNS.each { |pattern, v|
+						notes_in_scale = find_scale_notes(key, pattern).sort
+						if (notes_in_scale & notes) == notes
+							memo[key] ||= []
+							memo[key] << pattern
+						end
+					}
+					memo
+				}
+			end
 		end
 
 		self.extend(InstanceMethods)
