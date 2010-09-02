@@ -483,7 +483,7 @@ module Music
 
 			# Finds a chord type from the available notes.
 			def find_chords_from_notes(*args)
-				notes = Array(args).flatten.uniq
+				notes = Array(args).flatten.collect(&:upcase).uniq
 				notes.collect { |i|
 					notes.collect { |j|
 						[ low_to_high_distance(i, j), j ]
