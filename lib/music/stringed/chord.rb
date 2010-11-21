@@ -264,22 +264,29 @@ class Music::Stringed::Chord
 
 	def to_midi(options = {})
 		last_note = nil
-		n = 0
-		midi_notes = @fingering.sort_by { |x| x[0] }.collect { |k, v|
-			n << if last_note
-				low_to_high_distance(last_note, v.values.to_s)
+		octave = 0
+		midi_notes = @fingering.sort.collect do |string, v|
+			fret, note = v.map.pop
+
+			n = if last_note
+				low_to_high_distance(@key, note)
 			else
 				0
 			end
-			last_note = v.values.to_s
-			n
-		}
-		options = {
+
+			if last_note && note == @key
+				octave += 12
+			end
+			last_note = note
+
+			n + octave
+		end
+
+		super({
 			:notes => midi_notes,
 			:instrument => 'Acoustic Guitar (steel)',
 			:strum => true
-		}.merge options
-		super options
+		}.merge(options))
 	end
 
 	def to_image(options = {})
