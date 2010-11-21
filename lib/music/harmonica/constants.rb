@@ -64,6 +64,22 @@ module Music
 						[ 7, 6 ],
 						[ 0, 9 ]
 					]
+				},
+
+				:harmonic_minor => {
+					:name => 'Lee Oskar Harmonic Minor',
+					:tuning => [
+						[ 0, 2 ],
+						[ 3, 7 ],
+						[ 7, 11 ],
+						[ 0, 2 ],
+						[ 3, 5 ],
+						[ 7, 8 ],
+						[ 0, 11 ],
+						[ 3, 2 ],
+						[ 7, 5 ],
+						[ 0, 8 ]
+					]
 				}
 			}.freeze
 
