@@ -13,40 +13,40 @@ module Music
 		MIDI_CHORD = 1
 
 		def to_midi options = {}
-			options = {
-				:notes => nil,
-				:instrument => 'Acoustic Grand Piano',
-				:strum => false,
-				:key => nil
-			}.merge options
-
-			midi_type = case self.class.to_s
-				when /::Scale$/
-					MIDI_SCALE
-				when /::Chord$/
-					MIDI_CHORD
-				else
-					raise MidiException, "not really sure what to do at this point"
-			end
-
-			if !MIDI::GM_PATCH_NAMES.index(options[:instrument])
-				raise MidiException, "can't find instrument '#{options[:instrument]}' in GM_PATCH_NAMES"
-			end
-
-			start = find_note_from_char(options[:key] || @key)
-
-			if options[:notes]
-				midi_notes = options[:notes]
-			else
-				midi_notes = case midi_type
-					when MIDI_SCALE
-						find_scale_intervals(@pattern)
-					when MIDI_CHORD
-						find_chord_type(@type)
-				end
-			end
-
 			if defined? MIDI
+				options = {
+					:notes => nil,
+					:instrument => 'Acoustic Grand Piano',
+					:strum => false,
+					:key => nil
+				}.merge options
+
+				midi_type = case self.class.to_s
+					when /::Scale$/
+						MIDI_SCALE
+					when /::Chord$/
+						MIDI_CHORD
+					else
+						raise MidiException, "not really sure what to do at this point"
+				end
+
+				if !MIDI::GM_PATCH_NAMES.index(options[:instrument])
+					raise MidiException, "can't find instrument '#{options[:instrument]}' in GM_PATCH_NAMES"
+				end
+
+				start = find_note_from_char(options[:key] || @key)
+
+				if options[:notes]
+					midi_notes = options[:notes]
+				else
+					midi_notes = case midi_type
+						when MIDI_SCALE
+							find_scale_intervals(@pattern)
+						when MIDI_CHORD
+							find_chord_type(@type)
+					end
+				end
+
 				seq = MIDI::Sequence.new
 
 				# The first track sets up the tempo and such.
