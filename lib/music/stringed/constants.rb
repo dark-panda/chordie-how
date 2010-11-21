@@ -30,6 +30,21 @@ module Music
 					:tuning => %w{ C A D G B E }
 				},
 
+				:open_a => {
+					:name => 'open A',
+					:tuning => %w{ E A E A C# E }
+				},
+
+				:open_a_2 => {
+					:name => 'open A variant',
+					:tuning => %w{ E A C# E A E }
+				},
+
+				:open_b => {
+					:name => 'open B',
+					:tuning => %w{ B F# B F# B D# }
+				},
+
 				:open_c => {
 					:name => 'open C',
 					:tuning => %w{ C G C G C E }
@@ -45,14 +60,14 @@ module Music
 					:tuning => %w{ E B E G# B E }
 				},
 
+				:open_f => {
+					:name => 'open F',
+					:tuning => %w{ F A C F C F }
+				},
+
 				:open_g => {
 					:name => 'open G',
 					:tuning => %w{ D G D G B D }
-				},
-
-				:open_a => {
-					:name => 'open A',
-					:tuning => %w{ E A E A C# E }
 				},
 
 				:open_e_minor => {
@@ -73,11 +88,6 @@ module Music
 				:d7 => {
 					:name => 'D7',
 					:tuning => %w{ D A D F# C D }
-				},
-
-				:dsus=> {
-					:name => 'Dsus',
-					:tuning => %w{ D A D G A D }
 				},
 
 				:daddad => {
@@ -228,6 +238,216 @@ module Music
 				:soprano_ukulele => {
 					:name => 'Soprano Ukulele',
 					:tuning => %w{ A D F# B }
+				},
+
+				:asus2 => {
+					:name => 'Asus2',
+					:tuning => %w{ E A B E A E }
+				},
+
+				:asus4 => {
+					:name => 'Asus4',
+					:tuning => %w{ E A D E A E }
+				},
+
+				:c6 => {
+					:name => 'C6',
+					:tuning => %w{ C A C G C E }
+				},
+
+				:open_page => {
+					:name => 'open Page',
+					:tuning => %w{ D G C G C D }
+				},
+
+				:csus2 => {
+					:name => 'Csus2',
+					:tuning => %w{ C G C G C D }
+				},
+
+				:csus4_9 => {
+					:name => 'Csus4+9',
+					:tuning => %w{ C G C F C D }
+				},
+
+				:csus4 => {
+					:name => 'Csus4',
+					:tuning => %w{ C G C G C F }
+				},
+
+				:c15 => {
+					:name => 'C15',
+					:tuning => %w{ C G D G C D }
+				},
+
+				:dsus2 => {
+					:name => 'Dsus2',
+					:tuning => %w{ D A D E A D }
+				},
+
+				:dsus4 => {
+					:name => 'Dsus4',
+					:tuning => %w{ D A D G A D }
+				},
+
+				:esus2 => {
+					:name => 'Esus2',
+					:tuning => %w{ E A E F# B E }
+				},
+
+				:esus4 => {
+					:name => 'Esus4',
+					:tuning => %w{ E A E A B E }
+				},
+
+				:gsus2 => {
+					:name => 'Gsus2',
+					:tuning => %w{ D G D G A D }
+				},
+
+				:gsus4 => {
+					:name => 'Gsus4',
+					:tuning => %w{ D G D G C D }
+				},
+
+				:e_modal => {
+					:name => 'E modal',
+					:tuning => %w{ E B E E B E }
+				},
+
+				:g_modal => {
+					:name => 'G modal',
+					:tuning => %w{ G G D G B D }
+				},
+
+				:b_modal => {
+					:name => 'B modal',
+					:tuning => %w{ B F# C# F# B D# }
+				},
+
+				:c_sharp => {
+					:name => 'C#',
+					:tuning => %w{ C# F# B E G# C# }
+				},
+
+				:terz_tuning => {
+					:name => 'Terz tuning',
+					:tuning => %w{ G C F A# D G }
+				},
+
+				:cross_note_a => {
+					:name => 'cross note A',
+					:tuning => %w{ E A E A C E }
+				},
+
+				:cross_note_a_alt_1 => {
+					:name => 'cross note A alt. 1',
+					:tuning => %w{ E A C E A E }
+				},
+
+				:cross_note_c => {
+					:name => 'cross note C',
+					:tuning => %w{ C G C G C D# }
+				},
+
+				:cross_note_f => {
+					:name => 'cross note F',
+					:tuning => %w{ F G# C F C F }
+				},
+
+				:cross_note_f_alt_1 => {
+					:name => 'cross note F alt. 1',
+					:tuning => %w{ F C F G# C F }
+				},
+
+				:open_dmin7 => {
+					:name => 'open Dmin7',
+					:tuning => %w{ D A D F A C }
+				},
+
+				:open_dmin_add9 => {
+					:name => 'open Dmin add9 ',
+					:tuning => %w{ D A D F A E }
+				},
+
+				:open_emin7 => {
+					:name => 'open Emin7',
+					:tuning => %w{ E B D G B E }
+				},
+
+				:dobro_open_g6 => {
+					:name => 'Dobro open G6',
+					:tuning => %w{ G B D G B E }
+				},
+
+				:open_g7_alt_1 => {
+					:name => 'open G7 alt. 1',
+					:tuning => %w{ D G D G B F }
+				},
+
+				:open_g7_alt_2 => {
+					:name => 'open G7 alt. 2',
+					:tuning => %w{ D G D F B D }
+				},
+
+				:open_g7_alt_3 => {
+					:name => 'open G7 alt. 3',
+					:tuning => %w{ F G D G B D }
+				},
+
+				:open_gmaj7 => {
+					:name => 'open Gmaj7',
+					:tuning => %w{ D G D F# B D }
+				},
+
+				:modal_g7 => {
+					:name => 'Modal G7',
+					:tuning => %w{ F G D G C D }
+				},
+
+				:open_g13 => {
+					:name => 'open G13',
+					:tuning => %w{ F G D G B E }
+				},
+
+				:open_cmin7 => {
+					:name => 'open Cmin7',
+					:tuning => %w{ C G C G A# D# }
+				},
+
+				:open_cmaj7 => {
+					:name => 'open Cmaj7',
+					:tuning => %w{ C G C G B E }
+				},
+
+				:open_c6_9 => {
+					:name => 'open C6/9',
+					:tuning => %w{ C G C E A C }
+				},
+
+				:open_cmaj9 => {
+					:name => 'open Cmaj9',
+					:tuning => %w{ C G D G B E }
+				},
+
+				:csus2add11 => {
+					:name => 'Csus2add11',
+					:tuning => %w{ C G D F C F }
+				},
+
+				:golden_blue => {
+					:name => 'Golden Blue',
+					:tuning => %w{ C C C C A# F }
+				},
+
+				:open_gsus4 => {
+					:name => 'open Gsus4',
+					:tuning => %w{ D G C G C D }
+				},
+
+				:gorac => {
+					:name => 'Gorac',
+					:tuning => %w{ B G D G A E }
 				}
 			}.freeze
 
