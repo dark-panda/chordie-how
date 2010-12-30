@@ -448,6 +448,16 @@ module Music
 				:gorac => {
 					:name => 'Gorac',
 					:tuning => %w{ B G D G A E }
+				},
+
+				:strumstick => {
+					:name => 'Strumstick',
+					:tuning => %w{ G D G }
+				},
+
+				:strumstick_grand => {
+					:name => 'Strumsick Grand',
+					:tuning => %w{ D A D }
 				}
 			}.freeze
 
