@@ -30,7 +30,7 @@ module Music::Stringed
 					raise "must be a Symbol, String or Array"
 				end
 			rescue Exception => e
-				raise BadTuning.new(tuning, e.message)
+				raise Music::BadTuning.new(tuning, e.message)
 			end
 
 			t.collect do |v|

@@ -28,7 +28,7 @@ class Music::Harmonica::Scale
 			if TUNINGS[options[:tuning].to_sym]
 				@tuning = TUNINGS[options[:tuning].to_sym][:tuning]
 			else
-				raise BadTuning.new(options[:tuning])
+				raise Music::BadTuning.new(options[:tuning])
 			end
 		elsif Hash === options[:tuning] && options[:tuning][:tuning]
 			@tuning = options[:tuning][:tuning]
