@@ -12,3 +12,4 @@ doc/
 *.rbc
 test-all.sh
 .rbx
+Gemfile.lock

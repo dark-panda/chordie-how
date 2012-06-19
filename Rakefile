@@ -1,32 +1,36 @@
 # -*- ruby -*-
 
 require 'rubygems'
-require 'rake/gempackagetask'
+
+gem 'rdoc', '~> 3.12'
+
+require 'rubygems/package_task'
 require 'rake/testtask'
+require 'rdoc/task'
+require 'bundler/gem_tasks'
+
+if RUBY_VERSION >= '1.9'
+  begin
+    gem 'psych'
+  rescue Exception => e
+    # it's okay, fall back on the bundled psych
+  end
+end
 
 $:.push 'lib'
 
-begin
-	require 'jeweler'
-	Jeweler::Tasks.new do |gem|
-		gem.name         = "music"
-		gem.version      = "0.0.1"
-		gem.summary      = "A library for generating chord and scale charts for a variety of musical instruments."
-		gem.description  = gem.summary
-		gem.email        = "dark.panda@gmail.com"
-		gem.homepage     = "http://github.com/dark-panda/music"
-		gem.authors      = [ "J Smith" ]
-		gem.add_dependency 'gd2-ffij'
-	end
-	Jeweler::GemcutterTasks.new
-rescue LoadError
-	puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
-end
+version = Music::VERSION
 
-desc 'Test music library'
+desc 'Test ChordieHow library'
 Rake::TestTask.new(:test) do |t|
-	t.libs << 'lib'
-	t.pattern = 'test/**/*_test.rb'
-	t.verbose = false
+  t.test_files = FileList['test/**/*_test.rb']
+  t.verbose = !!ENV['VERBOSE_TESTS']
 end
 
+desc 'Build docs'
+Rake::RDocTask.new do |t|
+  t.title = "ChordieHow #{version}"
+  t.main = 'README.rdoc'
+  t.rdoc_dir = 'doc'
+  t.rdoc_files.include('README.rdoc', 'MIT-LICENSE', 'lib/**/*.rb')
+end
