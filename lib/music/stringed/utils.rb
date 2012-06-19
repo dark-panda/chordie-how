@@ -1,3 +1,4 @@
+# encoding: UTF-8
 
 require 'music/utils'
 require 'music/constants'

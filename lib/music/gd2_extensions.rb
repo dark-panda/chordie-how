@@ -1,3 +1,4 @@
+# encoding: UTF-8
 
 if defined? GD2
   module GD2

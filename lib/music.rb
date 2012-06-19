@@ -1,3 +1,4 @@
+# encoding: UTF-8
 
 # The Music module holds some basic methods and constants that we use to
 # figure out notes and such.
