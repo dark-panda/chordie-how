@@ -230,7 +230,7 @@ class UtilsTest < Test::Unit::TestCase
 
     assert_equal({
       "A" => [:harmonic_minor],
-      "E" => [:spanish_gypsy, :altered],
+      "E" => [:altered, :spanish_gypsy],
       "F" => [:melodic_minor]
     }, find_scales_from_notes(%w{ c d e f g# }))
   end
