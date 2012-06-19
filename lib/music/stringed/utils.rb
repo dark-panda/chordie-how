@@ -68,7 +68,7 @@ module Music::Stringed
     # * :limit the number of results
     def find_chords(key, type, options = {})
       options = {
-        :tuning => 'standard',
+        :tuning => :guitar_standard,
         :span => 3,
         :min_fret => 0,
         :max_fret => 12,

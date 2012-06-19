@@ -16,11 +16,11 @@ class StringedUtilsTest < Test::Unit::TestCase
   end
 
   def test_find_open_strings
-    assert_equal([7, 0, 5, 10, 2, 7], find_open_strings(:standard))
-    assert_equal([9, 2, 7, 0, 4, 9], find_open_strings(:standard, 2))
+    assert_equal([7, 0, 5, 10, 2, 7], find_open_strings(:guitar_standard))
+    assert_equal([9, 2, 7, 0, 4, 9], find_open_strings(:guitar_standard, 2))
 
-    assert_equal([7, 0, 5, 10, 2, 7], find_open_strings('standard'))
-    assert_equal([9, 2, 7, 0, 4, 9], find_open_strings('standard', 2))
+    assert_equal([7, 0, 5, 10, 2, 7], find_open_strings('guitar_standard'))
+    assert_equal([9, 2, 7, 0, 4, 9], find_open_strings('guitar_standard', 2))
 
     assert_equal([7, 0, 5, 10, 2, 7], find_open_strings(%w{ E A D G B E }))
     assert_equal([9, 2, 7, 0, 4, 9], find_open_strings(%w{ E A D G B E }, 2))
