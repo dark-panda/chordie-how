@@ -1,6 +1,14 @@
 *.kpf
+*.komodoproject
 *~
 *.orig
 .DS_Store
 *tmp*
 pkg/
+doc/
+*.orig
+*.patch
+.vimrc_local
+*.rbc
+test-all.sh
+.rbx
