@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-module Music
+module ChordieHow
   module Stringed
     module Constants
       # various tunings we can display. For flats, use the corresponding

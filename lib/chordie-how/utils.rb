@@ -1,13 +1,13 @@
 # encoding: UTF-8
 
-module Music
+module ChordieHow
   module Utils
     def self.included(base)
       base.send(:include, InstanceMethods)
     end
 
     module InstanceMethods
-      include Music::Constants
+      include ChordieHow::Constants
 
       # Looks up a scale pattern. You can also use Arrays or Hashes
       # directly.

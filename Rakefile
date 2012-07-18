@@ -19,7 +19,7 @@ end
 
 $:.push 'lib'
 
-version = Music::VERSION
+version = ChordieHow::VERSION
 
 desc 'Test ChordieHow library'
 Rake::TestTask.new(:test) do |t|

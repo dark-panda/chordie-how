@@ -2,13 +2,13 @@
 
 require 'builder'
 
-require 'music/midi'
-require 'music/utils'
+require 'chordie-how/midi'
+require 'chordie-how/utils'
 
-class Music::Harmonica::Scale
-  include Music::Midi
-  include Music::Utils
-  include Music::Harmonica::Constants
+class ChordieHow::Harmonica::Scale
+  include ChordieHow::Midi
+  include ChordieHow::Utils
+  include ChordieHow::Harmonica::Constants
 
   attr_reader :key, :pattern, :notes, :intervals, :tuning, :position, :position_key
 
@@ -29,7 +29,7 @@ class Music::Harmonica::Scale
       if TUNINGS[options[:tuning].to_sym]
         @tuning = TUNINGS[options[:tuning].to_sym][:tuning]
       else
-        raise Music::BadTuning.new(options[:tuning])
+        raise ChordieHow::BadTuning.new(options[:tuning])
       end
     elsif Hash === options[:tuning] && options[:tuning][:tuning]
       @tuning = options[:tuning][:tuning]

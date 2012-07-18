@@ -5,13 +5,13 @@ require 'test_helper'
 
 class StringedChordTest < Test::Unit::TestCase
   include TestHelper
-  include Music::Utils
+  include ChordieHow::Utils
 
-  C_MAJOR_STANDARD = Music::Stringed::Chord.new(
+  C_MAJOR_STANDARD = ChordieHow::Stringed::Chord.new(
     'C',
     '5 0E 1 3C 2 2E 3 0G 4 1C'
   )
-  D_MINOR_DADGAD = Music::Stringed::Chord.new(
+  D_MINOR_DADGAD = ChordieHow::Stringed::Chord.new(
     'D',
     '5 3F 0 0D 1 0A 2 0D 3 2A 4 0A',
     :tuning => :guitar_open_dsus4

@@ -5,7 +5,7 @@ require 'test_helper'
 
 class UtilsTest < Test::Unit::TestCase
   include TestHelper
-  include Music::Utils
+  include ChordieHow::Utils
 
   def test_find_scale_pattern
     assert_equal(%w{ w w h w w w h }, find_scale_pattern(:major))
@@ -13,7 +13,7 @@ class UtilsTest < Test::Unit::TestCase
     assert_equal(%w{ w w h w w w h }, %w{ w w h w w w h })
 
     assert_equal(%w{ w w h w w w h },
-      find_scale_pattern(Music::Constants::SCALE_PATTERNS[:major])
+      find_scale_pattern(ChordieHow::Constants::SCALE_PATTERNS[:major])
     )
   end
 
@@ -23,7 +23,7 @@ class UtilsTest < Test::Unit::TestCase
     assert_equal([ 0, 4, 7 ], [ 0, 4, 7 ])
 
     assert_equal([ 0, 4, 7 ],
-      find_chord_type(Music::Constants::CHORD_TYPES[:major])
+      find_chord_type(ChordieHow::Constants::CHORD_TYPES[:major])
     )
   end
 

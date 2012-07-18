@@ -2,16 +2,16 @@
 
 require 'builder'
 
-require 'music/midi'
-require 'music/utils'
-require 'music/image'
-require 'music/keyboard/utils'
+require 'chordie-how/midi'
+require 'chordie-how/utils'
+require 'chordie-how/image'
+require 'chordie-how/keyboard/utils'
 
-module Music::Keyboard::Diagrams
-  include Music::Midi
-  include Music::Utils
-  include Music::Image
-  include Music::Keyboard::Utils
+module ChordieHow::Keyboard::Diagrams
+  include ChordieHow::Midi
+  include ChordieHow::Utils
+  include ChordieHow::Image
+  include ChordieHow::Keyboard::Utils
 
   def self.included(base)
     base.instance_eval do

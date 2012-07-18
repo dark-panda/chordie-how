@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 
-require File.expand_path('../lib/music/version', __FILE__)
+require File.expand_path('../lib/chordie-how/version', __FILE__)
 
 Gem::Specification.new do |s|
-  s.name = "music"
-  s.version = Music::VERSION
+  s.name = "chordie-how"
+  s.version = ChordieHow::VERSION
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["J Smith"]

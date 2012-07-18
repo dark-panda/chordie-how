@@ -6,9 +6,9 @@ begin
 rescue Exception
 end
 
-module Music
+module ChordieHow
   module Image
-    class ImageException < MusicException; end
+    class ImageException < ChordieHowException; end
     class GD2Missing < ImageException; end
 
     FONT_PATH = File.join(File.expand_path(File.dirname(__FILE__)),

@@ -5,7 +5,7 @@ require 'test_helper'
 
 class StringedUtilsTest < Test::Unit::TestCase
   include TestHelper
-  include Music::Stringed::Utils
+  include ChordieHow::Stringed::Utils
 
   C_MAJOR_STANDARD = YAML.load(File.read(File.join(File.dirname(__FILE__), *%w{resources stringed c_major_standard.yml})))
   C_MAJOR_ABCDEFG = YAML.load(File.read(File.join(File.dirname(__FILE__), *%w{resources stringed c_major_abcdefg.yml})))

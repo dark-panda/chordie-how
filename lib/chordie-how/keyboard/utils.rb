@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-module Music
+module ChordieHow
   module Keyboard
     module Utils
       def highlight(c, if_condition)

@@ -1,14 +1,14 @@
 # encoding: UTF-8
 
-require 'music/utils'
-require 'music/constants'
-require 'music/stringed/constants'
+require 'chordie-how/utils'
+require 'chordie-how/constants'
+require 'chordie-how/stringed/constants'
 
-module Music::Stringed
+module ChordieHow::Stringed
   module Utils
-    include Music::Utils
-    include Music::Constants
-    include Music::Stringed::Constants
+    include ChordieHow::Utils
+    include ChordieHow::Constants
+    include ChordieHow::Stringed::Constants
 
     # check to see if we have a :limit option and it's valid.
     def have_limit?(l)
@@ -31,7 +31,7 @@ module Music::Stringed
           raise "must be a Symbol, String or Array"
         end
       rescue Exception => e
-        raise Music::BadTuning.new(tuning, e.message)
+        raise ChordieHow::BadTuning.new(tuning, e.message)
       end
 
       t.collect do |v|

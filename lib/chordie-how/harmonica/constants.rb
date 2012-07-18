@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-module Music
+module ChordieHow
   module Harmonica
     module Constants
       TUNINGS = {

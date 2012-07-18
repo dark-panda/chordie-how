@@ -2,24 +2,24 @@
 
 require 'builder'
 
-require 'music/utils'
-require 'music/midi'
-require 'music/image'
-require 'music/stringed/constants'
-require 'music/stringed/utils'
+require 'chordie-how/utils'
+require 'chordie-how/midi'
+require 'chordie-how/image'
+require 'chordie-how/stringed/constants'
+require 'chordie-how/stringed/utils'
 
 # The Chord class is used for displaying a chord. Generally, this is
 # something you'd want to use via the find_chords method rather than
 # instantiating directly, unless you happen to know how to fill the
 # fingering Hash.
-class Music::Stringed::Chord
-  include Music::Stringed
-  include Music::Midi
-  include Music::Image
-  include Music::Utils
+class ChordieHow::Stringed::Chord
+  include ChordieHow::Stringed
+  include ChordieHow::Midi
+  include ChordieHow::Image
+  include ChordieHow::Utils
 
-  include Music::Stringed::Utils
-  include Music::Stringed::Constants
+  include ChordieHow::Stringed::Utils
+  include ChordieHow::Stringed::Constants
 
   attr_reader :key, :fingering, :type, :capo, :max_fret,
     :min_fret, :notes, :intervals, :tuning_notes

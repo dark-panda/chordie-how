@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-module Music
+module ChordieHow
   module Constants
     # Standard notes from Western music. We always use the sharps rather
     # than flats to simplify things.

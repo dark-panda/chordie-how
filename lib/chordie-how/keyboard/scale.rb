@@ -1,9 +1,9 @@
 # encoding: UTF-8
 
-require 'music/keyboard/diagrams'
+require 'chordie-how/keyboard/diagrams'
 
-class Music::Keyboard::Scale
-  include Music::Keyboard::Diagrams
+class ChordieHow::Keyboard::Scale
+  include ChordieHow::Keyboard::Diagrams
 
   attr_reader :key, :pattern, :notes, :intervals
 

@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-module Music
+module ChordieHow
   VERSION = "0.0.1"
 end
 

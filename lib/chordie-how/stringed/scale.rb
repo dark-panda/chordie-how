@@ -2,22 +2,22 @@
 
 require 'builder'
 
-require 'music/utils'
-require 'music/midi'
-require 'music/image'
-require 'music/stringed/constants'
-require 'music/stringed/utils'
+require 'chordie-how/utils'
+require 'chordie-how/midi'
+require 'chordie-how/image'
+require 'chordie-how/stringed/constants'
+require 'chordie-how/stringed/utils'
 
 # The Scale class, unlike the Chord class, should be accessed directly
 # since figuring out the note positions on the fretboard is far less
 # involved than with a chord.
-class Music::Stringed::Scale
-  include Music::Midi
-  include Music::Utils
-  include Music::Image
-  include Music::Stringed
-  include Music::Stringed::Constants
-  include Music::Stringed::Utils
+class ChordieHow::Stringed::Scale
+  include ChordieHow::Midi
+  include ChordieHow::Utils
+  include ChordieHow::Image
+  include ChordieHow::Stringed
+  include ChordieHow::Stringed::Constants
+  include ChordieHow::Stringed::Utils
 
   attr_reader :key, :pattern, :notes, :intervals, :tuning
 

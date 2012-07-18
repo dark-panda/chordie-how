@@ -5,9 +5,9 @@ begin
 rescue Exception
 end
 
-module Music
+module ChordieHow
   module Midi
-    class MidiException < MusicException; end
+    class MidiException < ChordieHowException; end
     class MidilibMissing < MidiException; end
 
     MIDI_SCALE = 0

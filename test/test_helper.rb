@@ -5,7 +5,7 @@ require 'tmpdir'
 
 require 'rubygems'
 require 'yaml'
-require File.join(File.dirname(__FILE__), %w{ .. lib music })
+require File.join(File.dirname(__FILE__), %w{ .. lib chordie-how })
 
 module TestHelper
   PATH_TO_IMAGES = File.join(File.dirname(__FILE__), 'images')

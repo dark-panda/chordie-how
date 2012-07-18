@@ -1,5 +1,5 @@
 --- 
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: 
@@ -47,7 +47,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: 
@@ -91,7 +91,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: 
@@ -139,7 +139,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: 
@@ -183,7 +183,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: &id009 
@@ -231,7 +231,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: *id009
@@ -273,7 +273,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: &id015 
@@ -317,7 +317,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: *id015
@@ -359,7 +359,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: &id017 
@@ -404,7 +404,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: *id017
@@ -446,7 +446,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: &id020 
@@ -490,7 +490,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: *id020
@@ -532,7 +532,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: &id022 
@@ -578,7 +578,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: *id022
@@ -620,7 +620,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: &id026 
@@ -664,7 +664,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: *id026
@@ -706,7 +706,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: &id028 
@@ -751,7 +751,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: *id028
@@ -793,7 +793,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: &id031 
@@ -837,7 +837,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: *id031
@@ -879,7 +879,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     0: &id033 
@@ -925,7 +925,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     0: *id033
@@ -966,7 +966,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     0: *id033
@@ -1008,7 +1008,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     0: *id033
@@ -1049,7 +1049,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     0: *id033
@@ -1093,7 +1093,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     0: *id033
@@ -1134,7 +1134,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     0: *id033
@@ -1176,7 +1176,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     0: *id033
@@ -1217,7 +1217,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: &id043 
@@ -1261,7 +1261,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: *id043
@@ -1301,7 +1301,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: 
@@ -1343,7 +1343,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: 
@@ -1387,7 +1387,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: 
@@ -1429,7 +1429,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: 
@@ -1473,7 +1473,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: 
@@ -1515,7 +1515,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: 
@@ -1559,7 +1559,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: &id051 
@@ -1601,7 +1601,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: *id051
@@ -1641,7 +1641,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: &id053 
@@ -1685,7 +1685,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: *id053
@@ -1725,7 +1725,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: &id057 
@@ -1767,7 +1767,7 @@
   - F
   - G
   type: :major
-- !ruby/object:Music::Stringed::Chord 
+- !ruby/object:ChordieHow::Stringed::Chord 
   capo: 0
   fingering: 
     5: *id057
