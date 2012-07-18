@@ -95,7 +95,7 @@ class UtilsTest < Test::Unit::TestCase
         ["D#", "iii"],
         ["E", "III"],
         ["F", "IV"],
-        ["F#", "IV+ or V"],
+        ["F#", "IV+ or v"],
         ["G", "V"],
         ["G#", "V+ or vi"],
         ["A", "VI or vii\302\272"],
@@ -105,7 +105,7 @@ class UtilsTest < Test::Unit::TestCase
       find_symbols('C')
     )
 
-    assert_equal([["E", "III"], ["F", "IV"], ["F#", "IV+ or V"]],
+    assert_equal([["E", "III"], ["F", "IV"], ["F#", "IV+ or v"]],
       find_symbols('C', [ 4, 5, 6 ])
     )
   end

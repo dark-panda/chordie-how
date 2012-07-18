@@ -234,7 +234,7 @@ module Music
             when 5
               'IV'
             when 6
-              'IV+ or V'
+              'IV+ or v'
             when 7
               'V'
             when 8

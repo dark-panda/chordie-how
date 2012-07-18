@@ -95,7 +95,7 @@ class UtilsDowncaseTest < Test::Unit::TestCase
         ["D#", "iii"],
         ["E", "III"],
         ["F", "IV"],
-        ["F#", "IV+ or V"],
+        ["F#", "IV+ or v"],
         ["G", "V"],
         ["G#", "V+ or vi"],
         ["A", "VI or vii\302\272"],
@@ -105,7 +105,7 @@ class UtilsDowncaseTest < Test::Unit::TestCase
       find_symbols('c')
     )
 
-    assert_equal([["E", "III"], ["F", "IV"], ["F#", "IV+ or V"]],
+    assert_equal([["E", "III"], ["F", "IV"], ["F#", "IV+ or v"]],
       find_symbols('c', [ 4, 5, 6 ])
     )
   end
