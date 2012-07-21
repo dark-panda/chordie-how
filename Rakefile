@@ -25,6 +25,7 @@ desc 'Test ChordieHow library'
 Rake::TestTask.new(:test) do |t|
   t.test_files = FileList['test/**/*_test.rb']
   t.verbose = !!ENV['VERBOSE_TESTS']
+  t.warning = !!ENV['WARNINGS']
 end
 
 desc 'Build docs'
