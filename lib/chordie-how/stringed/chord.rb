@@ -269,7 +269,7 @@ class ChordieHow::Stringed::Chord
     last_note = nil
     octave = 0
     midi_notes = @fingering.sort.collect do |string, v|
-      fret, note = v.map.pop
+      note = v.map.pop[1]
 
       n = if last_note
         low_to_high_distance(@key, note)
