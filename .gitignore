@@ -13,3 +13,4 @@ doc/
 test-all.sh
 .rbx
 Gemfile.lock
+.rbenv-version
