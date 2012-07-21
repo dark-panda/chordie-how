@@ -54,7 +54,8 @@ class ChordieHow::Stringed::Chord
     @fingering = self.parse_fingering(fingering)
     @type = options[:type]
     @capo = options[:capo]
-    @notes = @fingering.collect { |x| x[1].values.to_s }.uniq
+    @notes = @fingering.collect { |x| x[1].values.first }.uniq
+
     @intervals = find_intervals(@key, @notes)
     @tuning = find_open_strings(options[:tuning], options[:capo])
     @tuning_notes = find_notes(@tuning)
@@ -120,13 +121,14 @@ class ChordieHow::Stringed::Chord
           tuning_range.each_with_index do |t, s|
             s = tuning_range.length - s - 1 if options[:lefty]
             klass, note_text = if @fingering[s]
-              if @notes.include?(@fingering[s].values.to_s)
+              value = @fingering[s].values.first
+              if @notes.include?(value)
                 klass = if options[:highlight_intervals]
-                  interval_to_html_class(@intervals, @fingering[s].values.to_s)
+                  interval_to_html_class(@intervals, value)
                 else
                   'note'
                 end
-                [ klass, @fingering[s].values ]
+                [ klass, value ]
               end
             else
               [ 'muted', 'x' ]
@@ -216,7 +218,7 @@ class ChordieHow::Stringed::Chord
     tuning_range.each_with_index do |t, s|
       s = tuning_range.length - s - 1 if options[:lefty]
       if @fingering[s]
-        retval << @fingering[s].values.to_s.ljust(3)
+        retval << @fingering[s].values.first.ljust(3)
       else
         retval << 'x'.ljust(3)
       end
@@ -378,7 +380,7 @@ class ChordieHow::Stringed::Chord
         end
 
         if @fingering[s]
-          n = @fingering[s].values.to_s
+          n = @fingering[s].values.first
           r = @fingering[s].keys.first
           y_offset = (r - @min_fret + 1) * 30
           x = if n.length == 2
