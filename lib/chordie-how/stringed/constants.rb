@@ -191,7 +191,7 @@ module ChordieHow
           :tuning => %w{ C F C E A C }
         },
 
-                :guitar_open_asus2 => {
+        :guitar_open_asus2 => {
           :name => 'Guitar open Asus2',
           :tuning => %w{ E A B E A E }
         },
