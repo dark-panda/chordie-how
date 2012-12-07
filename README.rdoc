@@ -1,0 +1,11 @@
+
+= ChordieHow
+
+ChordieHow is the Ruby library that powers the diagrams and charts found on
+ChordieHow.com.
+
+== License
+
+This gem is licensed under an MIT-style license. See the +MIT-LICENSE+ file for
+details.
+
