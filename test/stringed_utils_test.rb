@@ -3,7 +3,7 @@
 $: << File.dirname(__FILE__)
 require 'test_helper'
 
-class StringedUtilsTest < Test::Unit::TestCase
+class StringedUtilsTest < MiniTest::Unit::TestCase
   include TestHelper
   include ChordieHow::Stringed::Utils
 

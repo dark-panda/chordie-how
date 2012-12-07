@@ -18,8 +18,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency("gd2-ffij")
-  s.add_dependency("rdoc")
-  s.add_dependency("rake", ["~> 0.9"])
   s.add_dependency("builder")
 end
 

@@ -1,10 +1,14 @@
 # encoding: UTF-8
 
-require 'test/unit'
-require 'tmpdir'
-
 require 'rubygems'
+require 'tmpdir'
 require 'yaml'
+require 'minitest/autorun'
+
+if RUBY_VERSION >= '1.9'
+  require 'minitest/reporters'
+end
+
 require File.join(File.dirname(__FILE__), %w{ .. lib chordie-how })
 
 module TestHelper
@@ -19,3 +23,8 @@ module TestHelper
     GD2::Image.load(File.read(File.join(PATH_TO_IMAGES, file_name)))
   end
 end
+
+if RUBY_VERSION >= '1.9'
+  MiniTest::Reporters.use!(MiniTest::Reporters::SpecReporter.new)
+end
+
