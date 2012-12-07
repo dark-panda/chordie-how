@@ -54,8 +54,7 @@ class ChordieHow::Stringed::Chord
     @fingering = self.parse_fingering(fingering)
     @type = options[:type]
     @capo = options[:capo]
-    @notes = @fingering.collect { |x| x[1].values.first }.uniq
-
+    @notes = @fingering.collect { |x| x[1].values.first.to_s }.uniq
     @intervals = find_intervals(@key, @notes)
     @tuning = find_open_strings(options[:tuning], options[:capo])
     @tuning_notes = find_notes(@tuning)
@@ -99,7 +98,7 @@ class ChordieHow::Stringed::Chord
           if options[:embed_styles]
             xml.td(:style => td_style) { xml << '&nbsp;' }
           else
-            xml.td(nil)
+            xml.td('')
           end
 
           tuning_range.each_with_index do |t, s|
@@ -115,20 +114,20 @@ class ChordieHow::Stringed::Chord
           if options[:embed_styles]
             xml.td(:style => td_style) { xml << '&nbsp;' }
           else
-            xml.td(nil)
+            xml.td('')
           end
 
           tuning_range.each_with_index do |t, s|
             s = tuning_range.length - s - 1 if options[:lefty]
             klass, note_text = if @fingering[s]
-              value = @fingering[s].values.first
-              if @notes.include?(value)
+              if @notes.include?(@fingering[s].values.first.to_s)
+                note = @fingering[s].values.first.to_s
                 klass = if options[:highlight_intervals]
-                  interval_to_html_class(@intervals, value)
+                  interval_to_html_class(@intervals, note)
                 else
                   'note'
                 end
-                [ klass, value ]
+                [ klass, note ]
               end
             else
               [ 'muted', 'x' ]
@@ -218,7 +217,7 @@ class ChordieHow::Stringed::Chord
     tuning_range.each_with_index do |t, s|
       s = tuning_range.length - s - 1 if options[:lefty]
       if @fingering[s]
-        retval << @fingering[s].values.first.ljust(3)
+        retval << @fingering[s].values.first.to_s.ljust(3)
       else
         retval << 'x'.ljust(3)
       end
@@ -269,7 +268,7 @@ class ChordieHow::Stringed::Chord
     last_note = nil
     octave = 0
     midi_notes = @fingering.sort.collect do |string, v|
-      note = v.map.pop[1]
+      fret, note = v.map.pop
 
       n = if last_note
         low_to_high_distance(@key, note)
@@ -380,7 +379,7 @@ class ChordieHow::Stringed::Chord
         end
 
         if @fingering[s]
-          n = @fingering[s].values.first
+          n = @fingering[s].values.first.to_s
           r = @fingering[s].keys.first
           y_offset = (r - @min_fret + 1) * 30
           x = if n.length == 2
@@ -420,6 +419,10 @@ class ChordieHow::Stringed::Chord
 
   def to_png(options = {})
     self.to_image(options).png
+  end
+
+  def ==(other)
+    self.to_s == other.to_s
   end
 
   protected

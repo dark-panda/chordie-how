@@ -200,7 +200,8 @@ module ChordieHow::Stringed
       bass = false
       got = Hash.new
       chord.sort_by { |x| x[0] }.each do |k, v|
-        value = v.values.first
+        value = v.values.first.to_s
+
         if value == key
           bass = true
           got[value] = true

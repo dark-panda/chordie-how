@@ -194,8 +194,8 @@ class ChordieHow::Stringed::Scale
       strings.reverse! unless options[:lefty]
 
       tab = Array.new
-      strings.each do |ss|
-        tab << ss.join('-')
+      strings.each do |s|
+        tab << s.join('-')
       end
 
       ljust = String.new
@@ -207,9 +207,9 @@ class ChordieHow::Stringed::Scale
 
       txt.reverse! unless options[:lefty]
       max = txt.collect { |x| x.length }.max
-      txt.each_with_index do |t, ss|
-        ss = txt.length - ss - 1 unless options[:lefty]
-        retval << '|' + NOTES[@tuning[ss]].ljust(2, '-') + '|-'
+      txt.each_with_index do |t, s|
+        s = txt.length - s - 1 unless options[:lefty]
+        retval << '|' + NOTES[@tuning[s]].ljust(2, '-') + '|-'
         retval << t + ('-' * (max - t.length)) + "-|\n"
       end
       2.times { retval << "\n" }
