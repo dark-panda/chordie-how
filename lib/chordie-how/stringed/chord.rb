@@ -421,6 +421,10 @@ class ChordieHow::Stringed::Chord
     self.to_image(options).png
   end
 
+  def to_param
+    self.to_a.sort_by(&:first).collect { |k, v| "#{k} #{v.to_a.join}" }.join(' ')
+  end
+
   def ==(other)
     self.to_s == other.to_s
   end

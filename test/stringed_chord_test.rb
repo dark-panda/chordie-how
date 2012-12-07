@@ -71,4 +71,8 @@ class StringedChordTest < MiniTest::Unit::TestCase
   def test_to_png
     # to_png test not implemented yet
   end
+
+  def test_to_param
+    assert_equal('1 3C 2 2E 3 0G 4 1C 5 0E', C_MAJOR_STANDARD.to_param)
+  end
 end
