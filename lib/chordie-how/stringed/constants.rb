@@ -47,7 +47,7 @@ module ChordieHow
         },
 
         :guitar_open_c => {
-          :name => 'guitar open C',
+          :name => 'Guitar open C',
           :tuning => %w{ C G C G C E }
         },
 
