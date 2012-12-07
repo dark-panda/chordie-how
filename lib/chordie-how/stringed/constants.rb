@@ -138,12 +138,12 @@ module ChordieHow
 
         :guitar_open_e7 => {
           :name => 'Guitar open E7',
-          :tuning => %W{ B D E G# B E }
+          :tuning => %w{ B D E G# B E }
         },
 
         :guitar_open_e6 => {
           :name => 'Guitar open E6',
-          :tuning => %{ E G# B C# E G# }
+          :tuning => %w{ E G# B C# E G# }
         },
 
         :guitar_standard_seven_string => {
