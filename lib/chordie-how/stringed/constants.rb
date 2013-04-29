@@ -547,7 +547,7 @@ module ChordieHow
         },
 
         :guitar_open_c6add9 => {
-          :name => 'Open open C6add9',
+          :name => 'Guitar open C6add9',
           :tuning => %w{ C G D G A D }
         },
 
