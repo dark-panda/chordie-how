@@ -28,7 +28,7 @@ class ChordieHow::Stringed::Scale
   # Options:
   #
   # * :tuning - the tuning to use for the open strings, either as a
-  #   Symbol representing an entry in CHORD_TYPES or as an Array of
+  #   Symbol representing an entry in TUNINGS or as an Array of
   #   intervals. The default is the standard for a six-string guitar
   #   (EADGBE).
   def initialize(key, pattern = :major, options = {})
