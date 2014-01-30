@@ -1,6 +1,7 @@
 # encoding: UTF-8
 
 require 'chordie-how/utils'
+require 'chordie-how/stringed/arpeggio'
 require 'chordie-how/stringed/chord'
 require 'chordie-how/stringed/scale'
 
