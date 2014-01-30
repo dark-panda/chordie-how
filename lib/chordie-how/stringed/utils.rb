@@ -223,5 +223,7 @@ module ChordieHow::Stringed
         false
       end
     end
+
+    self.extend(self)
   end
 end

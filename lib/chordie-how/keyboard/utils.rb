@@ -10,6 +10,8 @@ module ChordieHow
           'note'
         end
       end
+
+      self.extend(self)
     end
   end
 end
